@@ -1,0 +1,8 @@
+\section{Related Work}
+\label{related_work}
+
+On-board pose estimation is very useful for a variety of applications ranging from autonomous robotics to augmented reality. Pose estimation can be done using different sensors such as cameras and inertial measurement units (IMU). Simultaneous localization and mapping (SLAM) using a monocular camera can be used to get the trajectory of the camera and a map of the environment. But monocular cameras suffer from scale ambiguity causing the overall trajectory to drift making it unusable in real time. Using a stereo camera helps solve the scale ambiguity. IMUs on the other hand can be used to get the trajectory traveled by integrating the acceleration measurements over time. But this leads to highly inaccurate trajectory estimates. The estimate of the scale factor is essential to fuse both these measurements. This fusion helps us determine the unknown scale factor $\lambda$.    
+
+In this paper, two methods are presented for scale estimation. The first one is a spline fitting method by Jung and Taylor~\cite{jung2001camera}. The second is a multi rate Extended Kalman Filter(EKF). Both the approach have been simulated in MATLAB. 
+
+The paper is organized as follows 

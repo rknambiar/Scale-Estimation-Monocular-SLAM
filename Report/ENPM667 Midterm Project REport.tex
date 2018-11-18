@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% First comes an example EPS file -- just ignore it and
+% proceed on the \documentclass line
+% your LaTeX will extract the file if required
+\begin{filecontents*}{example.eps}
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 19 19 221 221
+%%CreationDate: Mon Sep 29 1997
+%%Creator: programmed by hand (JK)
+%%EndComments
+gsave
+newpath
+  20 20 moveto
+  20 220 lineto
+  220 220 lineto
+  220 20 lineto
+closepath
+2 setlinewidth
+gsave
+  .4 setgray fill
+grestore
+stroke
+grestore
+\end{filecontents*}
+%
+\RequirePackage{fix-cm}
+%
+%\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{algorithm, algpseudocode}
+%\usepackage[noend]{algorithmic}
+%\usepackage[english]{babel} 
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+\begin{document}
+
+\title{Fusion of IMU and Vision for Absolute Scale 
+Estimation in Monocular SLAM%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+\subtitle{ENPM667 Midterm Project Report}
+
+%\titlerunning{Short form of title}        % if too long for running head
+
+\author{Harsh Kakashaniya         \and
+        Rohitkrishna Nambiar%etc.
+}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+\institute{Harsh Kakashaniya \at
+				UID: \\
+%              first address \\
+%              Tel.: +123-45-678910\\
+%              Fax: +123-45-678910\\
+              \email{harshbk@umd.edu}           %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+           \and
+           Rohitkrishna Nambiar \at
+           	UID: 115507944 \\
+            \email{rohit517@umd.edu}
+}
+
+%\date{Received: date / Accepted: date}
+\date{Submitted: 19th November 2018}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+The fusion of inertial and visual data is widely used to improve an object’s
+pose estimation. However, this type of fusion is rarely used to estimate further
+unknowns in the visual framework. In this paper we present and compare two
+different approaches to estimate the unknown scale parameter in a monocular
+SLAM framework. Directly linked to the scale is the estimation of the object’s
+absolute velocity and position in 3D. The first approach is a spline fitting task adapted
+from Jung and Taylor and the second is an extended Kalman filter. Both methods
+have been simulated offline on arbitrary camera paths to analyze their behavior and
+the quality of the resulting scale estimation. We then embedded an online multi rate
+extended Kalman filter in the Parallel Tracking and Mapping (PTAM) algorithm of
+Klein and Murray together with an inertial sensor. In this inertial/monocular SLAM
+framework, we show a real time, robust and fast converging scale estimation. Our approach does not depend on known patterns in the vision part nor a complex
+temporal synchronization between the visual and inertial sensor.
+\keywords{IMU vision fusion \and Absolute scale \and Monocular SLAM \and Kalman filter}
+% \PACS{PACS code1 \and PACS code2 \and more}
+% \subclass{MSC code1 \and MSC code2 \and more}
+\end{abstract}
+%\cleardoublepage
+\newpage
+\setcounter{tocdepth}{5}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\input{./text/introduction.tex}
+\input{./text/setup.tex}
+\input{./text/imageFormation.tex}
+\input{./text/mono_problem.tex}
+\input{./text/Spline_fitting.tex}
+\input{./text/slam.tex}
+\newpage
+%\section{Introduction}
+%\label{intro}
+%Your text comes here. Separate text sections with
+%\section{Section title}
+%
+%
+%\label{sec:1}
+%%Text with citations \cite{RefB} and \cite{RefJ}.
+%\subsection{Subsection title}
+%\label{sec:2}
+%as required. Don't forget to give each section
+%and subsection a unique label (see Sect.~\ref{sec:1}).
+%\paragraph{Paragraph headings} Use paragraph headings as needed.
+%\begin{equation}
+%a^2+b^2=c^2
+%\end{equation}
+%
+%% For one-column wide figures use
+%\begin{figure}
+%% Use the relevant command to insert your figure file.
+%% For example, with the graphicx package use
+%  \includegraphics{example.eps}
+%% figure caption is below the figure
+%\caption{Please write your figure caption here}
+%\label{fig:1}       % Give a unique label
+%\end{figure}
+%%
+%% For two-column wide figures use
+%\begin{figure*}
+%% Use the relevant command to insert your figure file.
+%% For example, with the graphicx package use
+%  \includegraphics[width=0.75\textwidth]{example.eps}
+%% figure caption is below the figure
+%\caption{Please write your figure caption here}
+%\label{fig:2}       % Give a unique label
+%\end{figure*}
+%%
+%% For tables use
+%\begin{table}
+%% table caption is above the table
+%\caption{Please write your table caption here}
+%\label{tab:1}       % Give a unique label
+%% For LaTeX tables use
+%\begin{tabular}{lll}
+%\hline\noalign{\smallskip}
+%first & second & third  \\
+%\noalign{\smallskip}\hline\noalign{\smallskip}
+%number & number & number \\
+%number & number & number \\
+%\noalign{\smallskip}\hline
+%\end{tabular}
+%\end{table}
+
+\nocite{*}
+
+%\begin{acknowledgements}
+%If you'd like to thank anyone, place your comments here
+%and remove the percent signs.
+%\end{acknowledgements}
+
+% BibTeX users please use one of
+\bibliographystyle{plain}
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+%\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+\bibliography{references}   % name your BibTeX data base
+
+%% Non-BibTeX users please use
+%\begin{thebibliography}{}
+%%
+%% and use \bibitem to create references. Consult the Instructions
+%% for authors for reference list style.
+%%
+%\bibitem{RefJ}
+%% Format for Journal Reference
+%Zhang, Zhengyou, Article title, Journal, Volume, page numbers (year)
+%% Format for books
+%\bibitem{RefB}
+%%Author, Book title, page numbers. Publisher, place (year)
+%% etc
+%\end{thebibliography}
+
+\end{document}
+% end of file template.tex
+

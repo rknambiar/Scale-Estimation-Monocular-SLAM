@@ -1,0 +1,12 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces \textbf {a.} Camera/IMU setup. \textbf {b}. Frame transformations}}{5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Please write your figure caption here}}{5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Please write your figure caption here}}{6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Monocular camera image coordinates}}{7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Curve Fitting with Maximum error }}{9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Curve Fitting with Average error }}{9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Curve Fitting with RMS error }}{10}
+\contentsline {figure}{\numberline {8}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{12}
+\contentsline {figure}{\numberline {9}{\ignorespaces Multiple spline fit}}{13}
+\contentsline {figure}{\numberline {10}{\ignorespaces A. Red curve for method with one curve and least square method. B. Green curve is using the given method by Jung and Taylor.}}{14}
+\contentsline {figure}{\numberline {11}{\ignorespaces SLAM architecture}}{15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Visual Odometry Pipeline}}{15}

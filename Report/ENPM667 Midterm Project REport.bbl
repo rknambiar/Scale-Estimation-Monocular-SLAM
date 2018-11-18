@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{jung2001camera}
+S-H Jung and Camillo~J Taylor.
+\newblock Camera trajectory estimation using inertial sensor measurements and
+  structure from motion results.
+\newblock In {\em Computer Vision and Pattern Recognition, 2001. CVPR 2001.
+  Proceedings of the 2001 IEEE Computer Society Conference on}, volume~2, pages
+  II--II. IEEE, 2001.
+
+\bibitem{zhang}
+Zhengyou Zhang.
+\newblock A flexible new technique for camera calibration.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  22, 2000.
+
+\end{thebibliography}
