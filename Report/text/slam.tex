@@ -20,7 +20,7 @@ From the problem statement above, we notice that the robot has no a priori knowl
 
 \subsection{Visual Odometry}
 
-As described in the above section, odometry is the technique of estimating the position of a robot over time using sensors such as cameras,  wheel encoders or any sensor measuring relative movement. Compared to vSLAM which maintains a global consistent map, VO maintains a local consistent map optimized over the last n frames. A generalized VO pipeline can be summarized as follows
+As described in the above section, Odometry is the technique of estimating the position of a robot over time using sensors such as cameras,  wheel encoders or any sensor measuring relative movement. Compared to SLAM which maintains a global consistent map, visual odometry (VO) maintains a local consistent map optimized over the last n frames. A generalized VO pipeline can be summarized as follows
 
 % For one-column wide figures use
 \begin{figure}[!htb]
@@ -28,7 +28,7 @@ As described in the above section, odometry is the technique of estimating the p
 % For example, with the graphicx package use
   \includegraphics[width=\textwidth]{./figures/vo.png}
 % figure caption is below the figure
-\caption{Visual Odometry Pipeline}
+\caption{Generalized Visual Odometry Pipeline}
 \label{fig:vo}       % Give a unique label
 \end{figure}
 
@@ -47,7 +47,17 @@ Different algorithms exist due to the different type of cameras available such a
 	\end{algorithmic}
 \end{algorithm}
 
-Since we are using a monocular sensor, we always compare the image $I_k$ captured at time instant $k$ with the image $I_{k-1}$ capture at time instant k-1. In a stereo setup, we would compare images from the left and right part of the stereo. Once an image is captured, we compute the features for image Ik and Ik-1. In the feature detection step, the image is searched for keypoints called features  which are likely to be present in successive images. Features can be defined as image patterns that differ from its immediate neighbourhood in terms of intensity, color and texture. There exist a variety of feature detectors in literature which vary in performance and properties. Some of the properties of feature detectors are rotation, scale and affine invariant, repeatability, localization accuracy, robustness and efficiency.  Heitanen et al. present a comparison of feature detectors and descriptors for object class matching in [12]. Once we detect features, we then need to compute a descriptor such that features detected in two images can be compared with each other. The easiest approach would be to form a path of pixels and compare using a sum of squared distances (SSD) or normalized cross correlation (NCC) metric. Such descriptors are not invariant to any of the above mentioned properties and perform poorly in practical applications. One of the popular descriptors called SIFT [13] uses gradient orientations as its descriptors. This forms a 128-element descriptor that is invariant to most of the above mentioned properties such as rotation, scale and illumination which makes it widely applicable in practical real-time applications. For extracting features from two images there are two paths with one being to detect and match features independently in two frames and the other being to track features in subsequent frames an example of which is a KLT Tracker [14]. There are various methods employed to match features accurately such a RANSAC which stands for Random Sample Consensus and is used to remove outliers among feature matches. Once we detect and match features in Ik and Ik-1, we calculate the essential matrix E which describes the geometric relationship between two images. We can use Nister’s five point algorithm [15] or Longuet-Higgins eight point algorithm [16] to get the essential matrix E. Once we get the essential matrix E, we decompose it to extract the rotation and translation parts. Four different solutions are obtained of which the correct pair can be found out by triangulation. The solutions are given as
+Since we are using a monocular sensor, we always compare the image $I_k$ captured at time instant $k$ with the image $I_{k-1}$ capture at time instant $k-1$. In a stereo setup, we would compare images from the left and right part of the stereo. Once an image is captured, we compute the features for image $I_k$ and $I_{k-1}$. In the feature detection step, the image is searched for key-points called features  which are likely to be present in successive images. Features can be defined as image patterns that differ from its immediate neighborhood in terms of intensity, color and texture. There exist a variety of feature detectors in literature which vary in performance and properties. Some of the properties of feature detectors are rotation, scale and affine invariant, repeatability, localization accuracy, robustness and efficiency.  Heitanen et al. present a comparison of feature detectors and descriptors for object class matching in~\cite{hietanen2016comparison}. Once we detect features, we then need to compute a descriptor such that features detected in two images can be compared with each other. The easiest approach would be to form a patch of pixels and compare using a sum of squared distances (SSD) or normalized cross correlation (NCC) metric. Such descriptors are not invariant to any of the above mentioned properties and perform poorly in practical applications. One of the popular descriptors called SIFT~\cite{lowe2004distinctive} uses gradient orientations as its descriptors. This forms a 128-element descriptor that is invariant to most of the above mentioned properties such as rotation, scale and illumination which makes it widely applicable in practical real-time applications. For extracting features from two images there are two paths with one being to detect and match features independently in two frames and the other being to track features in subsequent frames an example of which is a KLT Tracker~\cite{tomasi1991detection}. There are various methods employed to match features accurately such a RANSAC which stands for Random Sample Consensus and is used to remove outliers among feature matches. Once we detect and match features in $I_k$ and $I_{k-1}$, we calculate the essential matrix $E$ which describes the geometric relationship between two images. We can use Nister’s five point algorithm~\cite{nister2004efficient} or Longuet-Higgins eight point algorithm~\cite{longuet1981computer} to get the essential matrix $E$. Once we get the essential matrix $E$, we decompose it to extract the rotation and translation parts. Four different solutions are obtained of which the correct pair can be found out by triangulation. The solutions are given as
+
+\begin{equation}
+	R = U(\pm W^T)V^T
+\end{equation}
+
+\begin{equation}	
+	t = U(\pm W^T)SV^T
+\end{equation}
+
+where R is the rotation matrix and t is the translation vector. 
 
 \subsection{EKFSLAM}
 

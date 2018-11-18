@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{hietanen2016comparison}
+Antti Hietanen, Jukka Lankinen, Joni-Kristian K{\"a}m{\"a}r{\"a}inen,
+  Anders~Glent Buch, and Norbert Kr{\"u}ger.
+\newblock A comparison of feature detectors and descriptors for object class
+  matching.
+\newblock {\em Neurocomputing}, 184:3--12, 2016.
+
 \bibitem{jung2001camera}
 S-H Jung and Camillo~J Taylor.
 \newblock Camera trajectory estimation using inertial sensor measurements and
@@ -7,6 +14,27 @@ S-H Jung and Camillo~J Taylor.
 \newblock In {\em Computer Vision and Pattern Recognition, 2001. CVPR 2001.
   Proceedings of the 2001 IEEE Computer Society Conference on}, volume~2, pages
   II--II. IEEE, 2001.
+
+\bibitem{longuet1981computer}
+H~Christopher Longuet-Higgins.
+\newblock A computer algorithm for reconstructing a scene from two projections.
+\newblock {\em Nature}, 293(5828):133, 1981.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{nister2004efficient}
+David Nist{\'e}r.
+\newblock An efficient solution to the five-point relative pose problem.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  26(6):756--770, 2004.
+
+\bibitem{tomasi1991detection}
+Carlo Tomasi and Takeo Kanade.
+\newblock Detection and tracking of point features.
+\newblock 1991.
 
 \bibitem{zhang}
 Zhengyou Zhang.
