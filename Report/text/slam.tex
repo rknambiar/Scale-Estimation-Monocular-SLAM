@@ -11,16 +11,14 @@ Input:\
 \begin{equation}
 Control\ input:\ u_{1:T} = {u_1, u_2, ...., u_T}
 \end{equation}
-
 \begin{equation}
 Observations:\ z_{1:T} = {z_1, z_2, ...., z_T}
 \end{equation}
 
 Output:\
 \begin{equation}
-Map\ of\ Environment\ m
+Map\ of\ Environment:\ m
 \end{equation}
-
 \begin{equation}
 Path\ of\ robot:\ x_{0:T} = {x_0, x_1, ...., x_T}
 \end{equation}
@@ -38,7 +36,7 @@ From the problem statement above, we notice that the robot has no a priori knowl
 \label{fig:slammodel}       % Give a unique label
 \end{figure}
 
-From Fig ~\ref{fig:slammodel} we see that a typical SLAM system consists of a front-end and a back-end. The front-end is responsible for feature extraction while the back-end is responsible for MAP estimation. Both the methods (EKFSLAM \& PTAM) are feature based implementations. 
+From Fig ~\ref{fig:slammodel} we see that a typical SLAM system consists of a front-end and a back-end. The front-end is responsible for feature extraction while the back-end is responsible for MAP estimation. Both the methods (MonoSLAM \& PTAM) are feature based implementations. 
 
 \subsection{Visual Odometry}
 
@@ -81,7 +79,28 @@ Since we are using a monocular sensor, we always compare the image $I_k$ capture
 
 where R is the rotation matrix and t is the translation vector. 
 
-\subsection{EKFSLAM}
+\subsection{MonoSLAM}
+
+MonoSLAM was developed by Davison et al.~\cite{davison2003real,davison2007monoslam}. It uses EKF as an estimator. In EKFSLAM, the state \textbf{x} space is represented by the robot state $\hat{x_\nu}$ along with the position of the different landmarks $\hat{y_i}$ that the robot observes. The state vector along with the covariance matrix can be represented as follows
+
+\begin{equation}
+\hat{x} = 
+\begin{pmatrix}
+  \hat{x_\nu} \\
+  \hat{y_1} \\
+  \hat{y_2} \\
+  : 	\\
+ \end{pmatrix}
+P = 
+\begin{pmatrix}
+  P_{xx} & P_{xy1} & P_{xy2} & \cdots \\
+  P_{y1x} & P_{y1y1} & P_{y1y2} & \cdots \\
+  P_{y2x} & P_{y2y1} & P_{y1y2} & \cdots \\
+  : & :     &     :     & \cdots \\
+ \end{pmatrix}
+\end{equation}
+
+The covariance matrix is used to represent the first order uncertainty. As the robot moves around, new features are added to the state vector. It is important to note that the robot initialization is done by using a known object. The prediction and correction steps are performed as mentioned in the EKF algorithm in section~\ref{ekf_section}. One of the problems with this method is that the state vector becomes large when the number of land marks or key-points tracked increases. This increases the computation time.
 
 \subsection{Parallel Tracking and Mapping (PTAM)}
 \label{ptamtheory}

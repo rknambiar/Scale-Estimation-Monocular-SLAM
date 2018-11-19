@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{davison2003real}
+Andrew~J Davison.
+\newblock Real-time simultaneous localisation and mapping with a single camera.
+\newblock page 1403. IEEE, 2003.
+
+\bibitem{davison2007monoslam}
+Andrew~J Davison, Ian~D Reid, Nicholas~D Molton, and Olivier Stasse.
+\newblock Monoslam: Real-time single camera slam.
+\newblock {\em IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+  (6):1052--1067, 2007.
+
 \bibitem{hietanen2016comparison}
 Antti Hietanen, Jukka Lankinen, Joni-Kristian K{\"a}m{\"a}r{\"a}inen,
   Anders~Glent Buch, and Norbert Kr{\"u}ger.

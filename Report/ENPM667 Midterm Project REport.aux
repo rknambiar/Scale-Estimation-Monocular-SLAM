@@ -38,7 +38,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A. Red curve for method with one curve and least square method. B. Green curve is using the given method by Jung and Taylor.}}{14}}
 \newlabel{fig:errorc1}{{10}{14}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Extended Kalman Filter}{14}}
-\newlabel{Spline_1}{{6}{14}}
+\newlabel{ekf_section}{{6}{14}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Introduction}{14}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Kalman filter algorithm}}{15}}
 \newlabel{alg-gd}{{1}{15}}
@@ -58,36 +58,39 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Monocular Visual Odometry}}{17}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Generalized Visual Odometry Pipeline}}{18}}
 \newlabel{fig:vo}{{12}{18}}
-\citation{nister2004efficient}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}EKFSLAM}{19}}
+\citation{davison2003real,davison2007monoslam}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}MonoSLAM}{19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Parallel Tracking and Mapping (PTAM)}{19}}
 \newlabel{ptamtheory}{{7.3}{19}}
-\citation{nutzi2011fusion}
-\citation{nutzi2011fusion}
+\citation{nister2004efficient}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces PTAM - Tracking Algorithm}}{20}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces PTAM - Mapping Algorithm}}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Results}{20}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Simulated and Real Data}{20}}
-\citation{ptamcode}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{21}}
 \newlabel{fig:ekf1}{{13}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}Online Implementation}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Results}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Simulated and Real Data}{21}}
+\citation{ptamcode}
+\citation{nutzi2011fusion}
+\citation{nutzi2011fusion}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{22}}
+\newlabel{fig:ekf2}{{14}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}Online Implementation}{22}}
 \citation{*}
 \bibstyle{plain}
 \bibdata{references}
-\bibcite{hietanen2016comparison}{1}
-\bibcite{jung2001camera}{2}
-\bibcite{ptamcode}{3}
-\bibcite{klein2007parallel}{4}
-\bibcite{longuet1981computer}{5}
-\bibcite{lowe2004distinctive}{6}
-\bibcite{chli2017}{7}
-\bibcite{nister2004efficient}{8}
-\bibcite{nutzi2011fusion}{9}
-\bibcite{cyrillslam}{10}
-\bibcite{tomasi1991detection}{11}
-\bibcite{zhang}{12}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{22}}
-\newlabel{fig:ekf2}{{14}{22}}
+\bibcite{davison2003real}{1}
+\bibcite{davison2007monoslam}{2}
+\bibcite{hietanen2016comparison}{3}
+\bibcite{jung2001camera}{4}
+\bibcite{ptamcode}{5}
+\bibcite{klein2007parallel}{6}
+\bibcite{longuet1981computer}{7}
+\bibcite{lowe2004distinctive}{8}
+\bibcite{chli2017}{9}
+\bibcite{nister2004efficient}{10}
+\bibcite{nutzi2011fusion}{11}
+\bibcite{cyrillslam}{12}
+\bibcite{tomasi1991detection}{13}
+\bibcite{zhang}{14}
