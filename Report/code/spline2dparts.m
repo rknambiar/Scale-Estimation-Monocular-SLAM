@@ -10,7 +10,7 @@ Cameray=[0 10 -5 20 20 80]
 Scale1=0.5
 Scale2=0.5
 Scale3=0.1
-%##################### Without section ##########################
+%############# Without section ################
 
 Xn=linspace(1,15,n);
 S4=Xn.^3*transpose(Xn); % X^4 terms sum
@@ -93,7 +93,7 @@ Constant3=inv(A3)*B3; % by least square method
 Yline3=(Constant3(1,1).*X3.^2 + Constant3(2,1).*X3 + Constant3(3,1))+Scale3*(ConstCamera3(1,1)*X1+ConstCamera3(2,1));
 error3=Y(((2*n/3)+1):n)-Yline3; % Error term in actual and computed
 
-%######################## Graph section ###################
+%############### Graph section ###################
 
 error=[error1 error2 error3 ];
 Yline=[Yline1 Yline2 Yline3];
