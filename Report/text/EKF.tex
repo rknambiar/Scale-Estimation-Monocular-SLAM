@@ -62,10 +62,21 @@ So now lets take non-linear state equation as follows
 \end{equation}
 
 where $x_k+1$ is the position without scale of the IMU/Camera and $v_{k+1}$ , $a_k+1$ are the velocity and acceleration of the IMU/Camera in metric unit [m]. $ν_k$ is the gaussian process noise. 
+Main reason behind extended kalman filter working is when ever transition takes places between matices resultant output remains Gaussian and have defined mean and co-variance so in out treatment we can only do those transformation where we dont loose condition of system being Gaussian.
+For example, Linear curve when transformed is Gaussian but if the function is non linear it is resultant does not result into Gaussian so whole point of using Kalman filter is killed.
+So in Extended Kalman filter we linearize the system.
 Every vector in $z_k$ is resolved in the world frame W. Note that we do not
 include the orientation information in the model nor use it as a measurement in order. to keep the algorithm simple and fast. On each acceleration measurement we do the conversion from the inertial to the world frame by using a zero order hold  of the unfiltered attitude measurement returned by the visual SLAM framework. As we work in a middle size environment with enough loops we assume negligible drift win the SLAM map and assume thus highly accurate attitude estimation from the visual SLAM framework. The model in its linearized form yields,
 
-\begin{equation} 
+\begin{figure}[!htb]
+\includegraphics[width=\textwidth]{./figures/NonLinear.jpg}
+\caption{Curve Fitting with Maximum error ~\cite{ByBo2015}}
+\end{figure}
+
+
+
+
+\begin{equation}
 F_k= 
  \begin{pmatrix}
   I_3 & \frac{T}{\lambda}I_3  & \frac{T^2}{2 \lambda} I_3& -\frac{T}{ \lambda^2} I_3 - \frac{T^2}{ 2 \lambda^2} I_3\\
