@@ -12,13 +12,9 @@ noisez=5*(rand(1,n)-0.5) %noise in z
 
 %####################### Noisy Data ########################
 
-%X=3.*t.^2 + 5.*t + 2 + noisex %noisy data in x 
+%X=3.*t.^2 + 5.*t + 2 + noisex %noisy data in x
 %Y=2.*t.^2 + 7.*t + 2 + noisey %noisy data in y
 %Z=3.*t.^2 + 4.*t + 2 + noisez %noisy data in z
-%######################## Data set #########################
-X=[20 18 16 14 12 10 8 6 4 2 1 2 4 6 8 10 12 14 16 20]
-Y=[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]
-Z=[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]
 %################### Summation matrix ######################
 
 S4=t.^3*transpose(t) % t^4 terms sum
@@ -27,8 +23,8 @@ S2=t*transpose(t) % t^2 terms sum
 S1=t*ones(n,1) % X terms sum
 
 %################ Least Square matrix ######################
-%   AX=B 
-A=[S4 S3 S2;  %A matrix for computing X matrix  
+%   AX=B
+A=[S4 S3 S2;  %A matrix for computing X matrix
    S3 S2 S1;
    S2 S1 1]
 
@@ -54,7 +50,7 @@ error = abs(((errorx).^2 + errory.^2 + errorz.^2).^(0.5)) % final error
 %##################### Plots #############################
 figure;
 plot3(X,Y,Z,'o-b');grid; %plot of noisy data
-hold on 
+hold on
 plot3(Ylinex,Yliney,Ylinez,'--r');grid; %plot of least square data
 figure;
 plot(t,error,'-g');grid; % Error wrt to time
@@ -62,7 +58,7 @@ figure;
 plot(X,t,'--b')
 %####################### Velocity ########################
 
-Vx=6.*t + 5 %velcity data in x 
+Vx=6.*t + 5 %velcity data in x
 Vy=4.*t + 7 %velcity data in y
 Vz=6.*t + 4 %velcity data in z
 figure;
