@@ -1,14 +1,17 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces \textbf {a.} Camera/IMU setup. \textbf {b}. Frame transformations}}{5}
 \contentsline {figure}{\numberline {2}{\ignorespaces Please write your figure caption here}}{5}
 \contentsline {figure}{\numberline {3}{\ignorespaces Please write your figure caption here}}{6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Monocular camera image coordinates}}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Monocular camera scale problem}}{7}
 \contentsline {figure}{\numberline {5}{\ignorespaces Curve Fitting with Maximum error }}{9}
 \contentsline {figure}{\numberline {6}{\ignorespaces Curve Fitting with Average error }}{9}
 \contentsline {figure}{\numberline {7}{\ignorespaces Curve Fitting with RMS error }}{10}
 \contentsline {figure}{\numberline {8}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{12}
 \contentsline {figure}{\numberline {9}{\ignorespaces Multiple spline fit}}{13}
 \contentsline {figure}{\numberline {10}{\ignorespaces A. Red curve for method with one curve and least square method. B. Green curve is using the given method by Jung and Taylor.}}{14}
-\contentsline {figure}{\numberline {11}{\ignorespaces SLAM architecture}}{17}
-\contentsline {figure}{\numberline {12}{\ignorespaces Generalized Visual Odometry Pipeline}}{18}
-\contentsline {figure}{\numberline {13}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{21}
-\contentsline {figure}{\numberline {14}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{22}
+\contentsline {figure}{\numberline {11}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Curve Fitting with Maximum error }}{15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Curve Fitting with Maximum error \nobreakspace {}\cite {ByBo2015}}}{17}
+\contentsline {figure}{\numberline {14}{\ignorespaces SLAM architecture}}{19}
+\contentsline {figure}{\numberline {15}{\ignorespaces Generalized Visual Odometry Pipeline}}{19}
+\contentsline {figure}{\numberline {16}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{23}
+\contentsline {figure}{\numberline {17}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{24}

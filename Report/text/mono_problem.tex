@@ -7,13 +7,13 @@ As the name suggests a monocular camera is a camera with a single imaging sensor
 \begin{figure}
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
-  \includegraphics{example.eps}
+  \includegraphics[width=\textwidth]{./figures/1.png}
 % figure caption is below the figure
-\caption{Monocular camera image coordinates}
-\label{fig:3}       % Give a unique label
+\caption{Monocular camera scale problem}
+\label{fig:mono1}       % Give a unique label
 \end{figure}
 
-As seen in the above diagram, irrespective of the location of the object in the real world, the size of the object in the image plane remains the same. Mathematically, this can be shown as 
+As seen in the Fig~\ref{fig:mono1}, irrespective of the location of the object in the real world, the size of the object in the image plane remains the same. Mathematically, this can be shown as 
 
 \begin{equation}
 \frac{y}{f}=\frac{y_1}{z_1+f}=\frac{y_2}{z_2+f}

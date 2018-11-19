@@ -3,12 +3,13 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ENPM667 Midterm Project REport.aux
 The style file: plain.bst
 Database file #1: references.bib
+Warning--I didn't find a database entry for "ByBo2015"
 Warning--empty booktitle in davison2003real
 Warning--there's a number but no volume in davison2007monoslam
 Warning--empty journal in tomasi1991detection
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            586 strings with 6754 characters,
+            588 strings with 6770 characters,
 and the built_in function-call counts, 4409 in all, are:
 = -- 444
 > -- 175
@@ -47,4 +48,4 @@ warning$ -- 3
 while$ -- 46
 width$ -- 16
 write$ -- 153
-(There were 3 warnings)
+(There were 4 warnings)
