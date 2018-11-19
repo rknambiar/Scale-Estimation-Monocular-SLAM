@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces Curve Fitting with Maximum error }}{11}
 \contentsline {figure}{\numberline {8}{\ignorespaces Curve Fitting with Average error }}{11}
 \contentsline {figure}{\numberline {9}{\ignorespaces Curve Fitting with RMS error }}{12}
-\contentsline {figure}{\numberline {10}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{14}
+\contentsline {figure}{\numberline {10}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{15}
 \contentsline {figure}{\numberline {11}{\ignorespaces Multiple spline fit}}{15}
 \contentsline {figure}{\numberline {12}{\ignorespaces \textbf {a}. Red curve for method with one curve and least square method. \textbf {b}. Green curve is using the given method by Jung and Taylor.}}{16}
 \contentsline {figure}{\numberline {13}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{16}

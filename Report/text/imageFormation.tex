@@ -15,7 +15,7 @@ To understand how a camera perceives the environment, it is necessary we underst
 
 Although the pinhole model is quite accurate, modern cameras have lenses. They help gather more light from a source leading to higher quality sharper images. Ignoring the internal diffraction, we assume thin lens equations for the imaging process. Every camera has a region of depths over which the scene is sharp. Modern cameras have variable apertures which help in focusing on objects at varying distances in the scene.  
 
-Every camera has an intrinsic, extrinsic and distortion parameters that are important to understand for every application. These parameters are used to correct for lens distortion, measure objects in physical world and to determine the location of the camera in the real world. Camera calibration is the process of estimating these parameters specific to a given camera and application setup. Figure 2 demonstrates how the a real world 3D coordinate is related to a 2D pixel coordinate using the parameters mentioned above. The intrinsic camera matrix \textbf{K} is given by
+Every camera has an intrinsic, extrinsic and distortion parameters that are important to understand for every application. These parameters are used to correct for lens distortion, measure objects in physical world and to determine the location of the camera in the real world. Camera calibration is the process of estimating these parameters specific to a given camera and application setup. Figure~\ref{fig:transform} demonstrates how a real world 3D coordinate is related to a 2D pixel coordinate using the parameters mentioned above. The intrinsic camera matrix \textbf{K} is given by
 \begin{equation}
 K = 
 \begin{pmatrix}
@@ -40,9 +40,7 @@ t =
   t_z \\
  \end{pmatrix}
 \end{equation}
-where $R$ is the rotation matrix and $t$ is the translation vector between the camera center and world co-ordinates. 
-
-The camera matrix $P$ is given by 
+where $R$ is the rotation matrix and $t$ is the translation vector between the camera center and world co-ordinates. The camera matrix $P$ is given by 
 \begin{equation}
 P = K[R t]
 \end{equation}
@@ -54,7 +52,7 @@ P = K[R t]
   \includegraphics[width=\textwidth]{./figures/imageParams.png}
 % figure caption is below the figure
 \caption{World co-ordinates to pixel co-ordinates~\cite{camMATLAB}}
-\label{fig:2}       % Give a unique label
+\label{fig:transform}       % Give a unique label
 \end{figure}
 
 The extrinsic parameters relate the rotation $R$ and translation $t$ of the camera origin at the optical center to the world frame. The intrinsic parameters consists of the focal length given by $f_x$ and $f_y$, the optical center given by $c_x$ and $c_y$ and the skew coefficient $s$. The distortion parameters consists of radial and tangential distortion along the $x$ and $y$ direction respectively. The number of coefficients are decided based on the lens in consideration. Camera calibration techniques presented in~\cite{zhang,bouguet2004camera,heikkila1997four} are widely used in commercial and open source camera calibration tool boxes.

@@ -1,10 +1,10 @@
 \section{Spline Fitting Method}
 \label{Spline_1}
 
-In this paper there are 2 methods of fusing IMU data and Monocular camera. First of which is spline fitting using scale factor with the data of IMU and Monocular camera. Depending on the reliability of the data from both sources to estimate distance.So here we did simulation of whole system with arbitrary value of data considering linear moment of robot with noisy data. These simulations can be seen in result section. With the matlab code. So initially theory behind curve fitting is explained to have a algebraic background of types of curve fitting and their applications.We use spline in curve fitting because we get discrete data from sensors and camera but tracing spline helps for interpolation and extrapolation to have continuous high probability data of path.
+In this paper there are 2 methods of fusing IMU data and Monocular camera. First of which is spline fitting using scale factor with the data of IMU and Monocular camera depending on the reliability of the data from both sources to estimate distance. So here we did simulation of whole system with arbitrary value of data considering linear moment of robot with noisy data. Matlab simulations can be seen in the result section. Initially, theory behind curve fitting is explained to have an algebraic background of the types of curve fitting and their applications. We use spline in curve fitting because we get discrete data from sensors and camera but tracing spline helps for interpolation and extrapolation to have continuous high probability data of path.
 
-Spline is fitted on the data points which is output of sensor in our case. Spline fitting also helps in reducing error due to noise. For Improving accuracy we can increase number of spline but this will also result into increase in computation. So we have to trade off between accuracy and computation.
-Spline fitting is useful to give smooth curve .N degree spline may has N-1 curves in its shape. So if spline has X3 term that means it can have 2 curves in its spline.Ideal method to cover n points in a plan is by tracing nth order spline which will result into zero error. So spline will pass through all the points and will have a general equation as
+Spline is fitted on the data points which is output of sensor in our case. Spline fitting also helps in reducing error due to noise. For improving accuracy we can increase number of spline but this will also result in an increase in computation. So we have to trade off between accuracy and computation.
+Spline fitting is useful to give smooth curve. N degree spline may have N-1 curves in its shape. So if spline has $X^3$ term that means it can have 2 curves in its spline. Ideal method to cover n points in a plain is by tracing $n^{th}$ order spline which will result into zero error. So spline will pass through all the points and will have a general equation as
 
 \begin{equation}
 \ A_{0} +A_{1}X +A_{2}X^{2}+A_{3}X^{3} + ... + A_{n}X^{n} = Y
@@ -46,7 +46,7 @@ For practical application there are 3 kinds of spline fitting according to the a
 
 \subsection{Types of curve fitting}
 \subsubsection{Maximum error}
-This is the method where spline is fit in a way where the point with maximum error is reduced and curve move towards the outlier point. If there exist in order to reduce maximum error of a point. This on the other hand results into
+This is the method where spline is fit in a way where the point with maximum error is reduced and curve moves towards the outlier point. If there exist in order to reduce maximum error of a point. This on the other hand results into
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth]{./figures/Maxerror.PNG}
@@ -54,10 +54,10 @@ This is the method where spline is fit in a way where the point with maximum err
 \end{figure}
 
 \begin{equation}
-E(f)=|max (f(xi)-yi)|  where i goes from 1 to left n
+E(f)=|max (f(xi)-yi)|  where\ i\ goes\ from\ 1\ to\ left\ n
 \end{equation}
 
-Actually due to one outlier here line shifted in order to reduce maximum error. So this is not reliable process but is easy to compute.
+Due to one outlier here, the line is shifted in order to reduce maximum error. Although not a reliable process, it is easy to compute.
 
 \subsubsection{Average error}
 This method is used to minimize average and fit the spline with minimum error conditions.
@@ -74,7 +74,7 @@ E(f)=\frac{1}{n}*\Sigma|f(x_k)-Y_k|
 Actually due to one outlier here line shifted in order to reduce maximum error. So this is not reliable process but is easy to compute.
 
 \subsubsection{RMS (Least square method)}
-This is the most efficient method to minimize the error this is also called as least square method.
+This is the most efficient method to minimize the error called as least square method.
 Hence this is mostly used in curve fitting.
 We have also created an algorithm with the help of same type of curve fitting.
 
@@ -88,7 +88,7 @@ E(f)={\lbrace\frac{1}{n}*\Sigma|f(x_k)-Y_k|\rbrace}^\frac{1}{2}
 \end{equation}
 
 \subsection{IMU Reading}
-As we don’t have real IMU lets simulate virtual readings for this we took X, Y, Z as a function on time 
+As we don’t have real IMU data we simulate virtual readings for this. We take X, Y, Z as a function on time 
 
 \begin{equation}
 \label{For_x}
@@ -103,7 +103,7 @@ Y_1=A_y t^2+B_y t +C_y
 Z_1=A_z t^2+B_z t +C_z
 \end{equation}
 
-With this treatment we will add some random noise to all the terms so that the data can be similar to what we obtain form IMU.
+With this treatment we will add some random noise to all the terms so that the data can be similar to what we obtain from a real IMU.
 
 \begin{equation}
 noise=A*(rand(1,n)-0.5)
@@ -123,14 +123,13 @@ Y=Y_1+noise
 \begin{equation}
 Z=Z_1+noise
 \end{equation}
-We also took some random points of camera pose. And provided our system with data set.
+We also took some random points of camera pose. And provided our system with data set.\\
+
 Proof of Least square method in our case:
-Let’s consider optimization of X first.
- 
-From equation \eqref{For_x} we have
+Let’s consider optimization of X first. From equation \eqref{For_x} we have
 
 Here $A$, $B$, $C$ are known
-We have data set of X with respect to t
+We have data set of X with respect to t.
 To calculate error in RMS we have
  
 \begin{equation} 
@@ -169,7 +168,7 @@ So in this case if we take partial derivatives of error with respect to Ax , Bx 
 
 So we can compute matrix in such a way that the problem changes to 
 
-Ax=B
+$Ax=B$
 
 Where, 
 
