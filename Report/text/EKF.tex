@@ -64,7 +64,7 @@ include the orientation information in the model nor use it as a measurement in 
 \begin{equation} 
 F_k= 
  \begin{pmatrix}
-  I_3 & \frac{T}{\lambda}I_3  & \frac{T^2}{2 \lambda} I_3-\frac{T}{ \lambda^2} I_3 & \frac{T^2}{ 2 \lambda^2} I_3\\
+  I_3 & \frac{T}{\lambda}I_3  & \frac{T^2}{2 \lambda} I_3& -\frac{T}{ \lambda^2} I_3 - \frac{T^2}{ 2 \lambda^2} I_3\\
   0 & I_3 & T I_3 & 0 \\
   0 & 0 & I_3 & 0 \\
   0 & 0 & 0 & 1\\
@@ -75,7 +75,7 @@ For fusion implementation we consider the measurements in different observation
 vectors. For a multi rate filter, as it is in our case, the literature suggests two solutions. One would be using a (higher order) hold to synchronize the different measurements. Another is to weight the uncertainty of the measurement according to its temporal occurrence. We claim no certainty at all if no
 measurement is available (i.e. the measurement noise variance is infinite). Thus the update equations simplify to improve results. A more complex weighting function (i.e. exponential decay in time) could also be applied, however, at the cost of speed. The measurement updates for the vision and the IMU yields (‘V’ and ‘I’ denotes Vision and IMU)
 
-The innovation for the vision part is,
+The innovation done by authors in for the vision part is,
 \begin{equation}
 K_{V,k}=P_k^- H_{V,k}^T (H_{V,k} P_k H_{V,k}^T +R_v)^{-1}
 \end{equation}
@@ -86,7 +86,7 @@ K_{V,k}=P_k^- H_{V,k}^T (H_{V,k} P_k H_{V,k}^T +R_v)^{-1}
 P_k=(I-K_{V,k} H_{V,k}) P_k^-
 \end{equation}
 
-The innovation for the IMU part is,
+The innovation for by authors in the IMU part is,
 \begin{equation}
 K_{I,k}=P_k^- H_{I,k}^T (H_{I,k} P_k H_{I,k}^T +R_I)^{-1}
 \end{equation}
