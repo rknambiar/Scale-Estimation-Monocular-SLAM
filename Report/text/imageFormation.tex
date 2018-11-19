@@ -9,7 +9,7 @@ To understand how a camera perceives the environment, it is necessary we underst
 % For example, with the graphicx package use
   \includegraphics[width=\textwidth]{./figures/imageFormation.png}
 % figure caption is below the figure
-\caption{Please write your figure caption here}
+\caption{Pinhole Image formation}
 \label{fig:1}       % Give a unique label
 \end{figure}
 
@@ -17,13 +17,47 @@ Although the pinhole model is quite accurate, modern cameras have lenses. They h
 
 Every camera has an intrinsic, extrinsic and distortion parameters that are important to understand for every application. These parameters are used to correct for lens distortion, measure objects in physical world and to determine the location of the camera in the real world. Camera calibration is the process of estimating these parameters specific to a given camera and application setup. Figure 2 demonstrates how the a real world 3D coordinate is related to a 2D pixel coordinate using the parameters mentioned above.
 
+The intrinsic camera matrix \textbf{K} is given by
+\begin{equation}
+K = 
+\begin{pmatrix}
+  f_x & s & c_x \\
+  0 & f_y & c_y \\
+  0 & 0 & 1 \\
+ \end{pmatrix}
+\end{equation}
+where $(f_x, f_y)$ is the focal length, $(c_x, c_y)$ is the optical center
+and $s$ is skew factor.
+
+The extrinsic camera matrix $\textbf{[R|t]}$ is given by
+\begin{equation}
+R = 
+\begin{pmatrix}
+  r_1 & r_2 & r_3 \\
+  r_4 & r_5 & r_6 \\
+  r_7 & r_8 & r_9 \\
+ \end{pmatrix}
+t = 
+\begin{pmatrix}
+  t_x \\
+  t_y \\
+  t_z \\
+ \end{pmatrix}
+\end{equation}
+where $R$ is the rotation matrix and $t$ is the translation vector between the camera center and world co-ordinates. 
+
+The camera matrix $P$ is given by 
+\begin{equation}
+P = K[R t]
+\end{equation}
+
 % For one-column wide figures use
 \begin{figure}[H]
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
   \includegraphics[width=\textwidth]{./figures/imageParams.png}
 % figure caption is below the figure
-\caption{Please write your figure caption here}
+\caption{Camera calibration}
 \label{fig:2}       % Give a unique label
 \end{figure}
 

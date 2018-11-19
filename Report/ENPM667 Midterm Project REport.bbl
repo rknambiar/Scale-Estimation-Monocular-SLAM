@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{ByBo2015}
+Byron Boots.
+\newblock Statistical techniques in robotics, 2015.
+\newblock URL:
+  \url{https://www.cc.gatech.edu/~bboots3/STR-Spring2015/Lectures/Lecture12/Lecture12_notes.pdf}.
+  Last visited on 11/18/2018.
+
 \bibitem{davison2003real}
 Andrew~J Davison.
 \newblock Real-time simultaneous localisation and mapping with a single camera.
