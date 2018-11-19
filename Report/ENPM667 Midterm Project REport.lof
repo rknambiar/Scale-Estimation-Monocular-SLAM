@@ -9,4 +9,6 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Multiple spline fit}}{13}
 \contentsline {figure}{\numberline {10}{\ignorespaces A. Red curve for method with one curve and least square method. B. Green curve is using the given method by Jung and Taylor.}}{14}
 \contentsline {figure}{\numberline {11}{\ignorespaces SLAM architecture}}{15}
-\contentsline {figure}{\numberline {12}{\ignorespaces Generalized Visual Odometry Pipeline}}{15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Generalized Visual Odometry Pipeline}}{16}
+\contentsline {figure}{\numberline {13}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{19}
+\contentsline {figure}{\numberline {14}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace {}\cite {nutzi2011fusion}}}{20}

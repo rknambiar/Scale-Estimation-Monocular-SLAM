@@ -1,11 +1,11 @@
 \section{Simultaneous Localization and Mapping}
 \label{slam}
 
-Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using only visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
+In this section, we cover SLAM, and the different concepts related to SLAM such as Visual Odometry. We then explore the two different approaches to SLAM mentioned in the paper. We briefly cover filter based SLAM called Extended Kalman Filter SLAM (EKFSLAM) and a key-frame based SLAM called Parallel Tracking and Mapping (PTAM)~\cite{klein2007parallel}. Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using only visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
 
-\textbf{\emph{How can a body navigate in a previously unknown environment while constantly building and updating a map of its workspace using onboard sensors only?} [7]}\\
+\textbf{\emph{How can a body navigate in a previously unknown environment while constantly building and updating a map of its workspace using onboard sensors only?} ~\cite{chli2017}}\\
 
-From the problem statement above, we notice that the robot has no a priori knowledge of the workspace or environment that it is in. This makes SLAM a very challenging problem in probabilistic robotics. Accurate pose estimation is critical for many applications in computer vision, autonomous robotics and augmented reality.
+From the problem statement above, we notice that the robot has no a priori knowledge of the workspace or environment that it is in. This makes SLAM a very challenging problem in probabilistic robotics. This is also referred to as a chicken-egg problem in that we need to map the environment to get an accurate pose, but at the same time we also need an accurate pose to build a correct map. Therefore, it is an iterative process of estimating pose and building a map simultaneously. Accurate pose estimation is critical for many applications in computer vision, autonomous robotics and augmented reality.
   
 
 % For one-column wide figures use
@@ -18,9 +18,11 @@ From the problem statement above, we notice that the robot has no a priori knowl
 \label{fig:slammodel}       % Give a unique label
 \end{figure}
 
+From Fig ~\ref{fig:slammodel} we see that a typical SLAM system consists of a front-end and a back-end. The front-end is responsible for feature extraction while the back-end is responsible for MAP estimation. Both the methods (EKFSLAM \& PTAM) are feature based implementations. 
+
 \subsection{Visual Odometry}
 
-As described in the above section, Odometry is the technique of estimating the position of a robot over time using sensors such as cameras,  wheel encoders or any sensor measuring relative movement. Compared to SLAM which maintains a global consistent map, visual odometry (VO) maintains a local consistent map optimized over the last n frames. A generalized VO pipeline can be summarized as follows
+Odometry is the technique of estimating the position of a robot over time using sensors such as cameras,  wheel encoders or any sensor measuring relative movement. Compared to SLAM which maintains a global consistent map, visual odometry (VO) maintains a local consistent map optimized over the last n frames. A generalized VO pipeline can be summarized as follows
 
 % For one-column wide figures use
 \begin{figure}[!htb]
@@ -37,13 +39,13 @@ Different algorithms exist due to the different type of cameras available such a
 \begin{algorithm}
     \caption{Monocular Visual Odometry}
 	\begin{algorithmic}[1]
-		\State Capture a new image frame $I_k$
-    	\State Extract and match features between frames $I_k$ and $I_{k-1}$
-    	\State Compute the essential matrix $E$ from the matched feature points
-    	\State Decompose $E$ into $R_k$ and $t_k$ to form $T_k$
-    	\State Choose the correct $T_k$ matrix and scale $t_k$ accordingly from scale factor
-    	\State Compute $C_k$ = $C_{k-1}*T_k$
-    	\State Goto step 1.
+		\STATE Capture a new image frame $I_k$
+    	\STATE Extract and match features between frames $I_k$ and $I_{k-1}$
+    	\STATE Compute the essential matrix $E$ from the matched feature points
+    	\STATE Decompose $E$ into $R_k$ and $t_k$ to form $T_k$
+    	\STATE Choose the correct $T_k$ matrix and scale $t_k$ accordingly from scale factor
+    	\STATE Compute $C_k$ = $C_{k-1}*T_k$
+    	\STATE Goto step 1.
 	\end{algorithmic}
 \end{algorithm}
 
@@ -61,4 +63,82 @@ where R is the rotation matrix and t is the translation vector.
 
 \subsection{EKFSLAM}
 
-\subsection{PTAM}
+\subsection{Parallel Tracking and Mapping (PTAM)}
+\label{ptamtheory}
+
+PTAM is a SLAM system specifically designed to track a hand-held camera in a small AR workspace. For real-time operation, PTAM splits the tracking and mapping threads into two separate tasks running in parallel. The tracking thread robustly tracks hand-held motion and the mapping thread produces a 3D map of the features. Although developed specific to AR applications, the concept of running operations on multiple threads was incorporated into future SLAM algorithms. 
+
+The map consists of a collection of key-points/features that are located in a world frame $W$. They are represented in the homogeneous form. The map also contains key-frames which a instances of the frames taken from the hand-held camera. Each point is stored with a source key-frame. Unlike earlier methods which process each and every frame, this method only processes frames when there is sufficient information. Thus incremental mapping is replaced with a more computationally expensive batch method called bundle adjustment. 
+
+The tracking algorithm can be summarized as follows.
+
+\begin{algorithm}
+    \caption{PTAM - Tracking Algorithm}
+    \begin{algorithmic}[1]
+		\STATE A new frame is captured and a prior pose estimate is generated from motion model.
+    	\STATE Map points are projected into the image based on prior pose. 
+    	\STATE Small number of features (50) are searched in the image.
+    	\STATE The camera pose is updated from the feature matches.
+    	\STATE Large number of points is re-projected and searched in the image.
+    	\STATE Final pose estimate is computed from all matched found. 
+    	\STATE Goto step 1.
+    \end{algorithmic}
+\end{algorithm}
+
+PTAM is initialized by a lateral offset movement of the hand-held camera. This can be assumed as a stereo image for starting the mapping. The initial map is constructed using the 5 point algorithm~\cite{nister2004efficient} with arbitrary scale. As the camera moves, the key-frames increase from an initial two. Here, we only add key-frames if the tracking quality is good and a minimum of twenty frames has passed from the last keyframe. Bundle adjustemnt is iteratively performed to adjust the map based on a cost function. The mapping algorithm can then be summarized as.
+
+\begin{algorithm}
+    \caption{PTAM - Mapping Algorithm}
+	\begin{algorithmic}[1]
+		\REQUIRE \mbox{Stereo Initialization}
+		\IF {New Keyframe}
+			\STATE Update key-frame
+			\STATE Integrate key-frame
+			\STATE Add new features
+		\ELSIF {Locally Converged}
+			\IF {Globally Converged}
+				\STATE Update data association
+			\ELSE
+				\STATE Global bundle adjust
+			\ENDIF
+		\ELSE
+			\STATE Locally bundle adjust
+		\ENDIF
+		\STATE Sleep 5ms
+		\STATE Goto step 1.
+	\end{algorithmic}
+\end{algorithm}
+
+Finally when compared with Filter based SLAM, PTAM can handle thousands of features by splitting the tracking and mapping onto different threads on the CPU. We see that SLAM algorithms built now-a-days have used this philosophy to great success. 
+
+\subsection{Results}
+\subsubsection{Simulated and Real Data}
+
+In the paper, the Kalman filter was simulated offline with simulated data from the spline fitting section. The two inputs to the Kalman filter were the position from the vision sensor and acceleration from the IMU. Three different approaches were taken. The first method is same as Eq. 7, the second method only uses the Z-axis which gives the states as $[\overrightarrow{x}_z, \overrightarrow{\nu}_z, \overrightarrow{\alpha}_z, \lambda]$ and the third uses only the X and Y-axis. 
+
+% For one-column wide figures use
+\begin{figure}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=\textwidth]{./figures/ekfTest.png}
+% figure caption is below the figure
+\caption{Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda$.~\cite{nutzi2011fusion}}
+\label{fig:ekf1}       % Give a unique label
+\end{figure}
+
+Figure~\ref{fig:ekf1} shows the scale estimation $\lambda(t)$ for a simulated 3D path on left and actual path on right. The standard deviation for the acceleration noise for simulation was chosen same as real data($\sigma_{SLAM} = 0.01, \sigma_{IMU} = 0.2 m/s^2$) with initial velocity and acceleration set to zero. Plots in Fig.~\ref{fig:ekf1}a and Fig.~\ref{fig:ekf1}c do not differ due to simulating the acceleration from the spline ideally in world frame. The estimate becomes more accurate when we use less number of directions (X,Y,Z).  Wrong measurements in acceleration influence $\lambda$ and make the scale estimation sensitive as seen in Fig.~\ref{fig:ekf1}b. Hence only using a single axis (Z-axis) gives us the best result. 
+
+
+\subsubsection{Online Implementation}
+
+For the online implementation, the third setup was incorporated into the PTAM code~\cite{ptamcode}. As mentioned in section~\ref{ptamtheory} PTAM employs two parallel threads called Tracker for tracking and MapMaker for mapping. Two additional threads for IMU and Kalman we added. The IMU thread provides the acceleration measurements. The Kalman thread starts with $\lambda$ calculated from integrating acceleration values, position from SLAM algorithm and acceleration and velocity set to 0. Values for covariance matrix \textbf{Q} is time-varied which provides control over the sensitivity of the Kalman filter. For our report we have not incorporated the online implementation and have reported results from the paper. 
+
+% For one-column wide figures use
+\begin{figure}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=\textwidth]{./figures/onlineEKF.png}
+% figure caption is below the figure
+\caption{Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda$.~\cite{nutzi2011fusion}}
+\label{fig:ekf2}       % Give a unique label
+\end{figure}

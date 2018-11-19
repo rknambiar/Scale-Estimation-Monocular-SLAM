@@ -13,5 +13,8 @@
 \contentsline {section}{\numberline {6}Simultaneous Localization and Mapping}{14}
 \contentsline {subsection}{\numberline {6.1}Visual Odometry}{15}
 \contentsline {subsection}{\numberline {6.2}EKFSLAM}{17}
-\contentsline {subsection}{\numberline {6.3}PTAM}{17}
+\contentsline {subsection}{\numberline {6.3}Parallel Tracking and Mapping (PTAM)}{17}
+\contentsline {subsection}{\numberline {6.4}Results}{18}
+\contentsline {subsubsection}{\numberline {6.4.1}Simulated and Real Data}{18}
+\contentsline {subsubsection}{\numberline {6.4.2}Online Implementation}{19}
 \endgroup 
