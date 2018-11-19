@@ -1,6 +1,14 @@
 \relax 
 \@writefile{toc}{\begingroup \small }
+\citation{imgFormBoomgaard}
+\citation{camMATLAB}
+\citation{StarElec}
+\citation{StarElec}
 \citation{ByBo2015}
+\citation{ByBo2015}
+\citation{cadena2016past}
+\citation{scaramuzza2011visual}
+\citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
@@ -9,95 +17,134 @@
 \newlabel{introduction}{{1}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Hardware Setup}{4}}
 \newlabel{hardware_setup}{{2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Camera and image formation process}{4}}
-\newlabel{imageFormation}{{3}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {a.} Camera/IMU setup. \textbf  {b}. Frame transformations}}{5}}
-\newlabel{fig:setup1}{{1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pinhole Image formation}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {a.} Camera/IMU setup. \textbf  {b}. Frame transformations between IMU, Camera and World frame.}}{4}}
+\newlabel{fig:setup1}{{1}{4}}
+\citation{imgFormBoomgaard}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Camera and Image formation process}{5}}
+\newlabel{imageFormation}{{3}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pinhole Image formation\nobreakspace  {}\cite  {imgFormBoomgaard}}}{5}}
 \newlabel{fig:1}{{2}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Camera calibration}}{6}}
+\citation{camMATLAB}
+\citation{zhang,bouguet2004camera,heikkila1997four}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces World co-ordinates to pixel co-ordinates\nobreakspace  {}\cite  {camMATLAB}}}{6}}
 \newlabel{fig:2}{{3}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Monocular camera scale problem}}{7}}
-\newlabel{fig:mono1}{{4}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}What's wrong with monocular camera?}{7}}
-\newlabel{mono_prob}{{4}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Spline Fitting Method}{8}}
-\newlabel{Spline_1}{{5}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Types of curve fitting}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Maximum error}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Curve Fitting with Maximum error }}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Average error}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}RMS (Least square method)}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Curve Fitting with Average error }}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Curve Fitting with RMS error }}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}IMU Reading}{10}}
-\newlabel{For_x}{{10}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Results}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Multiple spline fit}}{14}}
-\newlabel{fig:multipleSpline}{{9}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Extended Kalman Filter}{14}}
-\newlabel{Spline_1}{{6}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Introduction}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A. Red curve for method with one curve and least square method. B. Green curve is using the given method by Jung and Taylor.}}{15}}
-\newlabel{fig:errorc1}{{10}{15}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Kalman filter algorithm}}{15}}
-\newlabel{alg-gd}{{1}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{16}}
-\newlabel{fig:errorc1}{{11}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Curve Fitting with Maximum error }}{16}}
+\citation{StarElec}
+\citation{StarElec}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Inertial Measurement Units}{7}}
+\newlabel{imusection}{{4}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Introduction}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces IMU Physical model\nobreakspace  {}\cite  {StarElec}}}{7}}
+\newlabel{fig:IMU Model}{{4}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Working}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Working of IMU model\nobreakspace  {}\cite  {StarElec}}}{8}}
+\newlabel{fig:Working of IMU}{{5}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}What's wrong with monocular camera?}{8}}
+\newlabel{mono_prob}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Monocular camera scale problem}}{9}}
+\newlabel{fig:mono1}{{6}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Spline Fitting Method}{9}}
+\newlabel{Spline_1}{{6}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Types of curve fitting}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Maximum error}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Average error}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Curve Fitting with Maximum error }}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Curve Fitting with Average error }}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}RMS (Least square method)}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Curve Fitting with RMS error }}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}IMU Reading}{12}}
+\newlabel{For_x}{{10}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Results}{14}}
 \citation{ByBo2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Curve Fitting with Maximum error \nobreakspace  {}\cite  {ByBo2015}}}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Extended Kalman Filter}{15}}
+\newlabel{ekf_section}{{7}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Multiple spline fit}}{16}}
+\newlabel{fig:multipleSpline}{{11}{16}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Kalman filter algorithm}}{16}}
+\newlabel{alg-gd}{{1}{16}}
+\citation{ByBo2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {a}. Red curve for method with one curve and least square method. \textbf  {b}. Green curve is using the given method by Jung and Taylor.}}{17}}
+\newlabel{fig:errorc1}{{12}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{18}}
+\newlabel{fig:errorc1}{{13}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Kalman filter state estimation\nobreakspace  {}\cite  {ByBo2015} }}{18}}
+\citation{davison2007monoslam}
 \citation{klein2007parallel}
+\citation{strasdatavisual}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Non-Linear system\nobreakspace  {}\cite  {ByBo2015}}}{19}}
 \citation{chli2017}
 \citation{cyrillslam}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Simultaneous Localization and Mapping}{18}}
-\newlabel{slam}{{7}{18}}
+\citation{bresson2017simultaneous,cadena2016past,taketomi2017visual}
+\citation{scaramuzza2011visual}
+\citation{cadena2016past}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Simultaneous Localization and Mapping}{20}}
+\newlabel{slam}{{8}{20}}
+\citation{scaramuzza2011visual}
+\citation{scaramuzza2011visual,fraundorfer2012visual}
+\citation{scaramuzza2011visual}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces SLAM architecture\nobreakspace  {}\cite  {cadena2016past}}}{21}}
+\newlabel{fig:slammodel}{{16}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Visual Odometry}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Generalized Visual Odometry Pipeline\nobreakspace  {}\cite  {scaramuzza2011visual}}}{21}}
+\newlabel{fig:vo}{{17}{21}}
 \citation{hietanen2016comparison}
 \citation{lowe2004distinctive}
 \citation{tomasi1991detection}
 \citation{nister2004efficient}
 \citation{longuet1981computer}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces SLAM architecture}}{19}}
-\newlabel{fig:slammodel}{{14}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Visual Odometry}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Generalized Visual Odometry Pipeline}}{20}}
-\newlabel{fig:vo}{{15}{20}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Monocular Visual Odometry}}{20}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Monocular Visual Odometry}}{22}}
 \citation{davison2003real,davison2007monoslam}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}MonoSLAM}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Parallel Tracking and Mapping (PTAM)}{21}}
-\newlabel{ptamtheory}{{7.3}{21}}
 \citation{nister2004efficient}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces PTAM - Tracking Algorithm}}{22}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces PTAM - Mapping Algorithm}}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}MonoSLAM}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Parallel Tracking and Mapping (PTAM)}{23}}
+\newlabel{ptamtheory}{{8.3}{23}}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{23}}
-\newlabel{fig:ekf1}{{16}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Results}{23}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Simulated and Real Data}{23}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces PTAM - Tracking Algorithm}}{24}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces PTAM - Mapping Algorithm}}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Results}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}Simulated and Real Data}{24}}
 \citation{ptamcode}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{25}}
+\newlabel{fig:ekf1}{{18}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.2}Online Implementation}{25}}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{24}}
-\newlabel{fig:ekf2}{{17}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}Online Implementation}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{26}}
+\newlabel{fig:ekf2}{{19}{26}}
 \citation{*}
 \bibstyle{plain}
 \bibdata{references}
 \bibcite{ByBo2015}{1}
-\bibcite{davison2003real}{2}
-\bibcite{davison2007monoslam}{3}
-\bibcite{hietanen2016comparison}{4}
-\bibcite{jung2001camera}{5}
-\bibcite{ptamcode}{6}
-\bibcite{klein2007parallel}{7}
-\bibcite{longuet1981computer}{8}
-\bibcite{lowe2004distinctive}{9}
-\bibcite{chli2017}{10}
-\bibcite{nister2004efficient}{11}
-\bibcite{nutzi2011fusion}{12}
-\bibcite{cyrillslam}{13}
-\bibcite{tomasi1991detection}{14}
-\bibcite{zhang}{15}
+\bibcite{bouguet2004camera}{2}
+\bibcite{bresson2017simultaneous}{3}
+\bibcite{cadena2016past}{4}
+\bibcite{davison2003real}{5}
+\bibcite{davison2007monoslam}{6}
+\bibcite{StarElec}{7}
+\bibcite{fraundorfer2012visual}{8}
+\bibcite{heikkila1997four}{9}
+\bibcite{hietanen2016comparison}{10}
+\bibcite{jung2001camera}{11}
+\bibcite{ptamcode}{12}
+\bibcite{klein2007parallel}{13}
+\bibcite{longuet1981computer}{14}
+\bibcite{lowe2004distinctive}{15}
+\bibcite{chli2017}{16}
+\bibcite{camMATLAB}{17}
+\bibcite{nister2004efficient}{18}
+\bibcite{nutzi2011fusion}{19}
+\bibcite{scaramuzza2011visual}{20}
+\bibcite{cyrillslam}{21}
+\bibcite{strasdatavisual}{22}
+\bibcite{taketomi2017visual}{23}
+\bibcite{tomasi1991detection}{24}
+\bibcite{imgFormBoomgaard}{25}
+\bibcite{zhang}{26}
+\@writefile{toc}{\contentsline {section}{\numberline {9}MATLAB Code}{29}}
+\newlabel{code}{{9}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{29}}
+\@writefile{lol}{\contentsline {lstlisting}{./code/spline2dparts.m}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{31}}
+\@writefile{lol}{\contentsline {lstlisting}{./code/spline3d.m}{32}}
+\@writefile{toc}{\endgroup }

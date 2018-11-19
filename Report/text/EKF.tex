@@ -1,7 +1,6 @@
 \section{Extended Kalman Filter}
-\label{Spline_1}
+\label{ekf_section}
 
-\subsection{Introduction}
 In estimation theory, the extended Kalman filter (EKF) is the nonlinear version of the Kalman filter which linearizes about an estimate of the current mean and covariance. In the case of well defined transition models, the EKF has been considered to estimate the state. 
 in this system we have a state and an observer these are given by equation.
 $ X=AX +BU + W_d $  and $ Y=CX + W_n $
@@ -17,7 +16,7 @@ So according in paper we learned that non-linear system is defined as.
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth]{./figures/EKF.jpg}
-\caption{Curve Fitting with Maximum error }
+\caption{Kalman filter state estimation~\cite{ByBo2015} }
 \end{figure}
 
 \begin{algorithm}
@@ -70,11 +69,8 @@ include the orientation information in the model nor use it as a measurement in 
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth]{./figures/NonLinear.jpg}
-\caption{Curve Fitting with Maximum error ~\cite{ByBo2015}}
+\caption{Non-Linear system~\cite{ByBo2015}}
 \end{figure}
-
-
-
 
 \begin{equation}
 F_k= 

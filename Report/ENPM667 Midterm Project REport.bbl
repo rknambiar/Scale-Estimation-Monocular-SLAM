@@ -7,6 +7,25 @@ Byron Boots.
   \url{https://www.cc.gatech.edu/~bboots3/STR-Spring2015/Lectures/Lecture12/Lecture12_notes.pdf}.
   Last visited on 11/18/2018.
 
+\bibitem{bouguet2004camera}
+J-Y Bouguet.
+\newblock Camera calibration toolbox for matlab.
+\newblock {\em http://www. vision. caltech. edu/bouguetj/calib\_doc/index.
+  html}, 2004.
+
+\bibitem{bresson2017simultaneous}
+Guillaume Bresson, Zayed Alsayed, Li~Yu, and S{\'e}bastien Glaser.
+\newblock Simultaneous localization and mapping: A survey of current trends in
+  autonomous driving.
+\newblock {\em IEEE Transactions on Intelligent Vehicles}, 20:1--1, 2017.
+
+\bibitem{cadena2016past}
+Cesar Cadena, Luca Carlone, Henry Carrillo, Yasir Latif, Davide Scaramuzza,
+  Jos{\'e} Neira, Ian Reid, and John~J Leonard.
+\newblock Past, present, and future of simultaneous localization and mapping:
+  Toward the robust-perception age.
+\newblock {\em IEEE Transactions on Robotics}, 32(6):1309--1332, 2016.
+
 \bibitem{davison2003real}
 Andrew~J Davison.
 \newblock Real-time simultaneous localisation and mapping with a single camera.
@@ -17,6 +36,25 @@ Andrew~J Davison, Ian~D Reid, Nicholas~D Molton, and Olivier Stasse.
 \newblock Monoslam: Real-time single camera slam.
 \newblock {\em IEEE Transactions on Pattern Analysis \& Machine Intelligence},
   (6):1052--1067, 2007.
+
+\bibitem{StarElec}
+Starlino Electronics.
+\newblock Imu guide.
+\newblock URL: \url{http://www.starlino.com/imu_guide.html}. Last visited on
+  11/18/2018.
+
+\bibitem{fraundorfer2012visual}
+Friedrich Fraundorfer and Davide Scaramuzza.
+\newblock Visual odometry: Part ii: Matching, robustness, optimization, and
+  applications.
+\newblock {\em IEEE Robotics \& Automation Magazine}, 19(2):78--90, 2012.
+
+\bibitem{heikkila1997four}
+Janne Heikkila and Olli Silven.
+\newblock A four-step camera calibration procedure with implicit image
+  correction.
+\newblock In {\em Computer Vision and Pattern Recognition, 1997. Proceedings.,
+  1997 IEEE Computer Society Conference on}, pages 1106--1112. IEEE, 1997.
 
 \bibitem{hietanen2016comparison}
 Antti Hietanen, Jukka Lankinen, Joni-Kristian K{\"a}m{\"a}r{\"a}inen,
@@ -62,6 +100,13 @@ Roland~Siegwart Margarita~Chli, Martin~Rufli.
   \url{https://www.ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/asl-dam/documents/lectures/autonomous_mobile_robots/spring-2017/2017%20-%20SLAM%20I%20-%20after%20lecture.pdf}.
   Last visited on 11/18/2018.
 
+\bibitem{camMATLAB}
+MATLAB.
+\newblock What is camera calibration.
+\newblock URL:
+  \url{https://www.mathworks.com/help/vision/ug/camera-calibration.html}. Last
+  visited on 11/18/2018.
+
 \bibitem{nister2004efficient}
 David Nist{\'e}r.
 \newblock An efficient solution to the five-point relative pose problem.
@@ -75,6 +120,11 @@ Gabriel N{\"u}tzi, Stephan Weiss, Davide Scaramuzza, and Roland Siegwart.
 \newblock {\em Journal of intelligent \& robotic systems}, 61(1-4):287--299,
   2011.
 
+\bibitem{scaramuzza2011visual}
+Davide Scaramuzza and Friedrich Fraundorfer.
+\newblock Visual odometry [tutorial].
+\newblock {\em IEEE robotics \& automation magazine}, 18(4):80--92, 2011.
+
 \bibitem{cyrillslam}
 Cyrill Stachniss.
 \newblock Lecture notes in robot mapping, 2013.
@@ -82,10 +132,27 @@ Cyrill Stachniss.
   \url{http://ais.informatik.uni-freiburg.de/teaching/ws12/mapping/pdf/slam04-ekf-slam.pdf}.
   Last visited on 11/18/2018.
 
+\bibitem{strasdatavisual}
+Hauke Strasdata, JMM Montielb, and Andrew~J Davisona.
+\newblock Visual slam: Why filter?
+
+\bibitem{taketomi2017visual}
+Takafumi Taketomi, Hideaki Uchiyama, and Sei Ikeda.
+\newblock Visual slam algorithms: a survey from 2010 to 2016.
+\newblock {\em IPSJ Transactions on Computer Vision and Applications}, 9(1):16,
+  2017.
+
 \bibitem{tomasi1991detection}
 Carlo Tomasi and Takeo Kanade.
 \newblock Detection and tracking of point features.
 \newblock 1991.
+
+\bibitem{imgFormBoomgaard}
+Rein van~den Boomgaard.
+\newblock Lecture notes image processing and computer vision.
+\newblock URL:
+  \url{https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/IP/Images/ImageFormation.html}.
+  Last visited on 11/18/2018.
 
 \bibitem{zhang}
 Zhengyou Zhang.

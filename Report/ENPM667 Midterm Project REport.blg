@@ -5,46 +5,48 @@ The style file: plain.bst
 Database file #1: references.bib
 Warning--empty booktitle in davison2003real
 Warning--there's a number but no volume in davison2007monoslam
+Warning--empty journal in strasdatavisual
+Warning--empty year in strasdatavisual
 Warning--empty journal in tomasi1991detection
-You've used 15 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            592 strings with 6946 characters,
-and the built_in function-call counts, 4615 in all, are:
-= -- 463
-> -- 182
-< -- 4
-+ -- 77
-- -- 58
-* -- 279
-:= -- 757
-add.period$ -- 48
-call.type$ -- 15
-change.case$ -- 74
+            652 strings with 8972 characters,
+and the built_in function-call counts, 8023 in all, are:
+= -- 794
+> -- 351
+< -- 5
++ -- 145
+- -- 114
+* -- 503
+:= -- 1327
+add.period$ -- 81
+call.type$ -- 26
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 180
-empty$ -- 388
-format.name$ -- 58
-if$ -- 981
+cite$ -- 31
+duplicate$ -- 301
+empty$ -- 655
+format.name$ -- 114
+if$ -- 1685
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 11
-newline$ -- 78
-num.names$ -- 30
-pop$ -- 95
+int.to.str$ -- 26
+missing$ -- 19
+newline$ -- 132
+num.names$ -- 52
+pop$ -- 174
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 109
 quote$ -- 0
-skip$ -- 136
+skip$ -- 226
 stack$ -- 0
-substring$ -- 271
-swap$ -- 42
-text.length$ -- 4
+substring$ -- 455
+swap$ -- 64
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 3
-while$ -- 48
-width$ -- 17
-write$ -- 163
-(There were 3 warnings)
+type$ -- 104
+warning$ -- 5
+while$ -- 82
+width$ -- 28
+write$ -- 274
+(There were 5 warnings)

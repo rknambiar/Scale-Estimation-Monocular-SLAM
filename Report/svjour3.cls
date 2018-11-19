@@ -456,7 +456,7 @@ used inside of \string\title, \string\author,\MessageBreak
 and \string\date\space prior to \string\maketitle}}
 %
 \def\maketitle{\par\let\thanks=\orithanks
-\ch@ckobl{journalname}{Springer}
+\ch@ckobl{journalname}{Project}
 \ch@ckobl{date}{the date of receipt and acceptance should be inserted
 later}
 \ch@ckobl{title}{A title should be given}

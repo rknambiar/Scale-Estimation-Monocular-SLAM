@@ -1,7 +1,7 @@
 \section{Simultaneous Localization and Mapping}
 \label{slam}
 
-In this section, we cover SLAM, and the different concepts related to SLAM such as Visual Odometry. We then explore the two different approaches to SLAM mentioned in the paper. We briefly cover filter based SLAM called Extended Kalman Filter SLAM (EKFSLAM) and a key-frame based SLAM called Parallel Tracking and Mapping (PTAM)~\cite{klein2007parallel}. Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using only visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
+In this section, we cover SLAM, and the different concepts related to SLAM such as Visual Odometry. We then explore the two different approaches to SLAM mentioned in the paper. We briefly cover filter based SLAM called MonoSLAM~\cite{davison2007monoslam} and a key-frame based SLAM called Parallel Tracking and Mapping (PTAM)~\cite{klein2007parallel}. A comprehensive analysis of filtering based SLAM is given in~\cite{strasdatavisual}. Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using only visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
 
 \textbf{\emph{How can a body navigate in a previously unknown environment while constantly building and updating a map of its workspace using onboard sensors only?} ~\cite{chli2017}}\\
 
@@ -23,8 +23,19 @@ Map\ of\ Environment:\ m
 Path\ of\ robot:\ x_{0:T} = {x_0, x_1, ...., x_T}
 \end{equation}
 
-From the problem statement above, we notice that the robot has no a priori knowledge of the workspace or environment that it is in. This makes SLAM a very challenging problem in probabilistic robotics. This is also referred to as a chicken-egg problem in that we need to map the environment to get an accurate pose, but at the same time we also need an accurate pose to build a correct map. Therefore, it is an iterative process of estimating pose and building a map simultaneously. Accurate pose estimation is critical for many applications in computer vision, autonomous robotics and augmented reality.
-  
+From the problem statement above, we notice that the robot has no a priori knowledge of the workspace or environment that it is in. This makes SLAM a very challenging problem in probabilistic robotics. This is also referred to as a chicken-egg problem in that we need to map the environment to get an accurate pose, but at the same time we also need an accurate pose to build a correct map. Therefore, it is an iterative process of estimating pose and building a map simultaneously. Accurate pose estimation is critical for many applications in computer vision, autonomous robotics and augmented reality. A survey of SLAM implementations is given in ~\cite{bresson2017simultaneous,cadena2016past,taketomi2017visual}. The basic modules for a vSLAM system are
+\begin{itemize}
+\item Initialization
+\item Tracking
+\item Mapping
+\item Relocalization
+\item Global Map optimization
+\end{itemize}
+
+According to~\cite{scaramuzza2011visual}, the relationship between vSLAM and VO can be represented as follows\\
+
+$vSLAM = VO + global\ map\ optimization$
+
 
 % For one-column wide figures use
 \begin{figure}
@@ -32,7 +43,7 @@ From the problem statement above, we notice that the robot has no a priori knowl
 % For example, with the graphicx package use
   \includegraphics[width=\textwidth]{./figures/slam_model.png}
 % figure caption is below the figure
-\caption{SLAM architecture}
+\caption{SLAM architecture~\cite{cadena2016past}}
 \label{fig:slammodel}       % Give a unique label
 \end{figure}
 
@@ -46,15 +57,15 @@ Odometry is the technique of estimating the position of a robot over time using 
 \begin{figure}[!htb]
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
-  \includegraphics[width=\textwidth]{./figures/vo.png}
+  \includegraphics[width=\textwidth,height=5cm,keepaspectratio]{./figures/vo.png}
 % figure caption is below the figure
-\caption{Generalized Visual Odometry Pipeline}
+\caption{Generalized Visual Odometry Pipeline~\cite{scaramuzza2011visual}}
 \label{fig:vo}       % Give a unique label
 \end{figure}
 
-Different algorithms exist due to the different type of cameras available such as Stereo, Mono, RGB-D. As we use a monocular setup in our research paper, we would be going through the visual odometry algorithm from 2D to 2D correspondences for a monocular sensor. The algorithm is summarized as follows.
+Different algorithms exist due to the different type of cameras available such as Stereo, Mono, RGB-D~\cite{scaramuzza2011visual,fraundorfer2012visual}. As we use a monocular setup in our research paper, we would be going through the visual odometry algorithm from 2D to 2D correspondences for a monocular sensor. The algorithm is summarized as follows~\cite{scaramuzza2011visual}.
 
-\begin{algorithm}
+\begin{algorithm}[H]
     \caption{Monocular Visual Odometry}
 	\begin{algorithmic}[1]
 		\STATE Capture a new image frame $I_k$
@@ -72,7 +83,6 @@ Since we are using a monocular sensor, we always compare the image $I_k$ capture
 \begin{equation}
 	R = U(\pm W^T)V^T
 \end{equation}
-
 \begin{equation}	
 	t = U(\pm W^T)SV^T
 \end{equation}
