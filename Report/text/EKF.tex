@@ -8,13 +8,17 @@ $ X=AX +BU + W_d $  and $ Y=CX + W_n $
 In this $ W_d $ is disturbance and $ W_n $ is the noise by sensor.
 So Kalman filter is used judges between data be disturbance and noise.
 
+
 If $W_d >> W_n$ that means disturbance amount is higher than noise hence state estimation can rely more on sensor data for mapping than on previous state. And sensor is more reliable.
 
 if $W_n >> W_d$ that means noise amount is higher than disturbance hence state estimation can rely more on previous plot data for mapping than on sensor. And state is more reliable than sensor.
 
 So according in paper we learned that non-linear system is defined as.
 
-
+\begin{figure}[!htb]
+\includegraphics[width=\textwidth]{./figures/EKF.jpg}
+\caption{Curve Fitting with Maximum error }
+\end{figure}
 
 \begin{algorithm}
 \caption{Kalman filter algorithm}\label{alg-gd}
@@ -59,7 +63,7 @@ So now lets take non-linear state equation as follows
 
 where $x_k+1$ is the position without scale of the IMU/Camera and $v_{k+1}$ , $a_k+1$ are the velocity and acceleration of the IMU/Camera in metric unit [m]. $ν_k$ is the gaussian process noise. 
 Every vector in $z_k$ is resolved in the world frame W. Note that we do not
-include the orientation information in the model nor use it as a measurement in order. to keep the algorithm simple and fast. On each acceleration measurement we do the conversion from the inertial to the world frame by using a zero order hold  of the unfiltered attitude measurement returned by the visual SLAM framework. As we work in a middle size environment with enough loops we assume negligible drift in the SLAM map and assume thus highly accurate attitude estimation from the visual SLAM framework. The model in its linearized form yields,
+include the orientation information in the model nor use it as a measurement in order. to keep the algorithm simple and fast. On each acceleration measurement we do the conversion from the inertial to the world frame by using a zero order hold  of the unfiltered attitude measurement returned by the visual SLAM framework. As we work in a middle size environment with enough loops we assume negligible drift win the SLAM map and assume thus highly accurate attitude estimation from the visual SLAM framework. The model in its linearized form yields,
 
 \begin{equation} 
 F_k= 
