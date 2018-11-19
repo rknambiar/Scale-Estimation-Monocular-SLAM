@@ -12,9 +12,9 @@ noisez=5*(rand(1,n)-0.5) %noise in z
 
 %######### Noisy Data ####################
 
-%X=3.*t.^2 + 5.*t + 2 + noisex %noisy data in x
-%Y=2.*t.^2 + 7.*t + 2 + noisey %noisy data in y
-%Z=3.*t.^2 + 4.*t + 2 + noisez %noisy data in z
+X=3.*t.^2 + 5.*t + 2 + noisex %noisy data in x
+Y=2.*t.^2 + 7.*t + 2 + noisey %noisy data in y
+Z=3.*t.^2 + 4.*t + 2 + noisez %noisy data in z
 %######## Summation matrix ###############
 
 S4=t.^3*transpose(t) % t^4 terms sum

@@ -1,8 +1,7 @@
 \section{Extended Kalman Filter}
 \label{ekf_section}
 
-In estimation theory, the extended Kalman filter (EKF) is the nonlinear version of the Kalman filter which linearizes about an estimate of the current mean and covariance. In the case of well defined transition models, the EKF has been considered to estimate the state. 
-in this system we have a state and an observer these are given by equation.
+In estimation theory, the extended Kalman filter (EKF) is the nonlinear version of the Kalman filter which linearizes about an estimate of the current mean and covariance. In the case of well defined transition models, the EKF has been considered to estimate the state. In this system we have a state and an observer these are given by equation.
 $ X=AX +BU + W_d $  and $ Y=CX + W_n $
 In this $ W_d $ is disturbance and $ W_n $ is the noise by sensor.
 So Kalman filter is used judges between data be disturbance and noise.
@@ -12,7 +11,7 @@ If $W_d >> W_n$ that means disturbance amount is higher than noise hence state e
 
 if $W_n >> W_d$ that means noise amount is higher than disturbance hence state estimation can rely more on previous plot data for mapping than on sensor. And state is more reliable than sensor.
 
-So according in paper we learned that non-linear system is defined as.
+So accordingly in paper we learned that non-linear system is defined as.
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth]{./figures/EKF.jpg}
@@ -83,7 +82,7 @@ F_k=
 \end{equation}
 
 For fusion implementation we consider the measurements in different observation
-vectors. For a multi rate filter, as it is in our case, the literature suggests two solutions. One would be using a (higher order) hold to synchronize the different measurements. Another is to weight the uncertainty of the measurement according to its temporal occurrence. We claim no certainty at all if no
+vectors. For a multi rate filter, as it is in our case, the literature suggests two solutions. One would be using a (higher order) hold to synchronize the different measurements. Another is to weight the uncertainty of the measurement according to its temporal occurrence. The authors claim no certainty at all if no
 measurement is available (i.e. the measurement noise variance is infinite). Thus the update equations simplify to improve results. A more complex weighting function (i.e. exponential decay in time) could also be applied, however, at the cost of speed. The measurement updates for the vision and the IMU yields (‘V’ and ‘I’ denotes Vision and IMU)
 
 The innovation done by authors in for the vision part is,

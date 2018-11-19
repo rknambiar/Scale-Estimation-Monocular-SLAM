@@ -54,7 +54,7 @@ This is the method where spline is fit in a way where the point with maximum err
 \end{figure}
 
 \begin{equation}
-E(f)=|max (f(xi)-yi)|  where\ i\ goes\ from\ 1\ to\ left\ n
+E(f)=|max (f(xi)-yi)|  where\ i\ goes\ from\ 1\ to\ n
 \end{equation}
 
 Due to one outlier here, the line is shifted in order to reduce maximum error. Although not a reliable process, it is easy to compute.
@@ -92,7 +92,7 @@ As we don’t have real IMU data we simulate virtual readings for this. We take 
 
 \begin{equation}
 \label{For_x}
-X_1=A_y t^2+B_y t +C_x
+X_1=A_x t^2+B_x t +C_x
 \end{equation}
 
 \begin{equation}
@@ -163,7 +163,7 @@ So in this case if we take partial derivatives of error with respect to Ax , Bx 
 \end{equation}
 
 \begin{equation} 
-\displaystyle\sum_{i=1}^{n}(|{-1}X_i+(A_x t_i^2+B_x t_i+C_x)|) = 0
+\displaystyle\sum_{i=1}^{n}(|-X_i+(A_x t_i^2+B_x t_i+C_x)|) = 0
 \end{equation}
 
 So we can compute matrix in such a way that the problem changes to 
@@ -248,19 +248,20 @@ min
  \end{pmatrix}^2
  \end{equation}
  
- Here in this formula we have different value of  for different spline according to accuracy of camera data and IMU reading.
+ Here in this formula we have different value for different spline according to accuracy of camera data and IMU reading.
 
 \subsection{Results}
  
  In our case we simulated the results and found following outputs.
-Plotting the second order curve for given data of IMU with just least square method. We get the following graph
+Plotting the second order curve for given data of IMU with just least square method. We get the following graph~\ref{imures1}.
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth,height=7cm,keepaspectratio]{./figures/lsm.jpg}
 \caption{In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}
+\label{imures1}
 \end{figure}
 
-Then according to the paper we fused data of camera and IMU so we get following graph.
+Then according to the paper we fused data of camera and IMU so we get following graph~\ref{fig:multipleSpline}.
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth,height=7cm,keepaspectratio]{./figures/AllOutput.jpg}
@@ -268,7 +269,7 @@ Then according to the paper we fused data of camera and IMU so we get following 
 \label{fig:multipleSpline}
 \end{figure}
 
-In Figure~\ref{fig:multipleSpline} we have 3 curved fitted as shown as red which gives better results and it also uses data of camera shown with black dots. So here according to the above formula scale factor of different section is different it is according to the quality of reading by camera.
+In Figure~\ref{fig:multipleSpline} we have 3 curves fitted as shown as red which gives better results and it also uses data of camera shown with black dots. So here according to the above formula scale factor of different section is different it is according to the quality of reading by camera.
 For example, in our case 
 \begin{equation}
 \lambda_1=0.5 ,\lambda_2=0.5 ,\lambda_3=0.1
@@ -276,7 +277,7 @@ For example, in our case
 
 In 3rd section camera readings were not accurate so taken into smaller scalar value. This camera data further improved the result. And we get minimum error and good fit. With the given spline fitting method.
 
-So if we look into different of error with traditional Least square method with Jung and Taylor method. It gives good results. Almost we get the same curve.
+So if we look into different error methods with traditional Least square method with Jung and Taylor method, it gives us good results with output similar to the research paper.
 
 \begin{figure}[!htb]
 \includegraphics[width=\textwidth,height=7cm,keepaspectratio]{./figures/ErrorC.jpg}
@@ -288,7 +289,7 @@ So if we look into different of error with traditional Least square method with 
 The graph in Figure 12 has error comparison with and without Jung and Taylor method of split curve fitting and scaling camera input.
 So it is better to follow the given first method in the paper. It results into considerable reduction in error which is clearly seen in graph.
 
-With the same approach we can optimize and plot spline in 3 Dimension so when we use this algorithm for 3D space we get the following result where we get an second order optimized curve. we also included considerable noise and tested our algorithm.
+With the same approach we can optimize and plot spline in 3 dimension so when we use this algorithm for 3D space we get the following result where we get an second order optimized curve. We also included considerable noise and tested our algorithm.
   
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=7cm,keepaspectratio]{./figures/3DCurve.jpg}

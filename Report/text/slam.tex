@@ -1,7 +1,7 @@
 \section{Simultaneous Localization and Mapping}
 \label{slam}
 
-In this section, we cover SLAM, and the different concepts related to SLAM such as Visual Odometry. We then explore the two different approaches to SLAM mentioned in the paper. We briefly cover filter based SLAM called MonoSLAM~\cite{davison2007monoslam} and a key-frame based SLAM called Parallel Tracking and Mapping (PTAM)~\cite{klein2007parallel}. A comprehensive analysis of filtering based SLAM is given in~\cite{strasdatavisual}. Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using only visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
+In this section, we cover SLAM, and the different concepts related to SLAM such as Visual Odometry. We then explore the two different approaches to SLAM mentioned in the paper. We briefly cover filter based SLAM called MonoSLAM~\cite{davison2007monoslam} and a key-frame based SLAM called Parallel Tracking and Mapping (PTAM)~\cite{klein2007parallel}. A comprehensive analysis of filtering based SLAM is given in~\cite{strasdatavisual}. Simultaneous Localization and Mapping (SLAM) is a technique for estimating the motion of the robot and reconstructing the map/structure of the unknown environment. SLAM using visual information only is specifically referred to as visual SLAM (vSLAM). The SLAM problem can be stated as follows:\\
 
 \textbf{\emph{How can a body navigate in a previously unknown environment while constantly building and updating a map of its workspace using onboard sensors only?} ~\cite{chli2017}}\\
 
@@ -47,7 +47,7 @@ $vSLAM = VO + global\ map\ optimization$\\
 \label{fig:slammodel}       % Give a unique label
 \end{figure}
 
-From Fig~\ref{fig:slammodel} we see that a typical SLAM system consists of a front-end and a back-end. The front-end is responsible for feature extraction while the back-end is responsible for MAP estimation. Both the methods (MonoSLAM \& PTAM) are feature based implementations. 
+From Fig~\ref{fig:slammodel} we see that a typical SLAM system consists of a front-end and a back-end. The front-end is responsible for feature extraction while the back-end is responsible for map estimation. Both the methods (MonoSLAM \& PTAM) are feature based implementations as they have a camera input. 
 
 \subsection{Visual Odometry}
 
@@ -63,7 +63,7 @@ Odometry is the technique of estimating the position of a robot over time using 
 \label{fig:vo}       % Give a unique label
 \end{figure}
 
-Different algorithms exist due to the different type of cameras available such as Stereo, Mono, RGB-D~\cite{scaramuzza2011visual,fraundorfer2012visual}. As we use a monocular setup in our research paper, we would be going through the visual odometry algorithm from 2D to 2D correspondences for a monocular sensor. The algorithm is summarized as follows~\cite{scaramuzza2011visual}.
+Different algorithms exist due to the different type of cameras available such as Stereo, Mono, RGB-D~\cite{fraundorfer2012visual,scaramuzza2011visual}. As we use a monocular setup in our research paper, we would be going through the visual odometry algorithm from 2D to 2D correspondences for a monocular sensor. The algorithm is summarized as follows~\cite{scaramuzza2011visual}.
 
 \begin{algorithm}[H]
     \caption{Monocular Visual Odometry}
@@ -175,12 +175,12 @@ In the paper, the Kalman filter was simulated offline with simulated data from t
 \label{fig:ekf1}       % Give a unique label
 \end{figure}
 
-Figure~\ref{fig:ekf1} shows the scale estimation $\lambda(t)$ for a simulated 3D path on left and actual path on right. The standard deviation for the acceleration noise for simulation was chosen same as real data($\sigma_{SLAM} = 0.01, \sigma_{IMU} = 0.2 m/s^2$) with initial velocity and acceleration set to zero. Plots in Fig.~\ref{fig:ekf1}a and Fig.~\ref{fig:ekf1}c do not differ due to simulating the acceleration from the spline ideally in world frame. The estimate becomes more accurate when we use less number of directions (X,Y,Z).  Wrong measurements in acceleration influence $\lambda$ and make the scale estimation sensitive as seen in Fig.~\ref{fig:ekf1}b. Hence only using a single axis (Z-axis) gives us the best result. 
+Figure~\ref{fig:ekf1} shows the scale estimation $\lambda(t)$ for a simulated 3D path on left and actual path on right. The standard deviation for the acceleration noise for simulation was chosen same as real data($\sigma_{SLAM} = 0.01, \sigma_{IMU} = 0.2 m/s^2$) with initial velocity and acceleration set to zero. Plots in Fig.~\ref{fig:ekf1}a and Fig.~\ref{fig:ekf1}c do not differ significantly due to simulating the acceleration from the spline ideally in world frame. The estimate becomes more accurate when we use less number of directions (X,Y,Z).  Wrong measurements in acceleration influence $\lambda$ and make the scale estimation sensitive as seen in Fig.~\ref{fig:ekf1}b. Hence only using a single axis (Z-axis) gives us the best result. 
 
 
 \subsubsection{Online Implementation}
 
-For the online implementation, the third setup was incorporated into the PTAM code~\cite{ptamcode}. As mentioned in section~\ref{ptamtheory} PTAM employs two parallel threads called Tracker for tracking and MapMaker for mapping. Two additional threads for IMU and Kalman we added. The IMU thread provides the acceleration measurements. The Kalman thread starts with $\lambda$ calculated from integrating acceleration values, position from SLAM algorithm and acceleration and velocity set to 0. Values for covariance matrix \textbf{Q} is time-varied which provides control over the sensitivity of the Kalman filter. For our report we have not incorporated the online implementation and have reported results from the paper. 
+For the online implementation, the third setup was incorporated into the PTAM code~\cite{ptamcode}. As mentioned in section~\ref{ptamtheory} PTAM employs two parallel threads called Tracker for tracking and MapMaker for mapping. Two additional threads for IMU and Kalman we added. The IMU thread provides the acceleration measurements. The Kalman thread starts with $\lambda$ calculated from integrating acceleration values, position from SLAM algorithm and acceleration and velocity set to zero. Values for covariance matrix \textbf{Q} is time-varied which provides control over the sensitivity of the Kalman filter. For our report we have not incorporated the online implementation and have reported results from the paper. 
 
 % For one-column wide figures use
 \begin{figure}

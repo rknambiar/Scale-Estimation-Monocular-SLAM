@@ -1,3 +1,7 @@
+% To Change the characteristic of graph or suit it to other data do changes in first section of code. 
+% 1.Do vary Scale parameters in different spline to further fit the curve with minimum error.(Scale)
+% 2.Also we can change number of points(keep multiple of 3 )(n)
+% 3. We can replace our simulated data with actual data. 
 clear all
 clear
 n=60; % Points to be considered in curve
@@ -29,7 +33,6 @@ Ylinen=(Constant1(1,1).*Xn.^2 + Constant1(2,1).*Xn + Constant1(3,1)) ;
 errorn=Y-Ylinen; % Error term in actual and computed
 
 %################Section wise ##################
-
 %for first section
 X1=linspace(1,5,n/3);
 
@@ -72,7 +75,6 @@ Yline2=(Constant2(1,1).*X2.^2 + Constant2(2,1).*X2 + Constant2(3,1))+Scale2*(Con
 error2=Y(((n/3)+1):2*n/3)-Yline2; % Error term in actual and computed
 
 %################################################################
-
 %for third section
 X3=linspace(10,15,n/3);
 

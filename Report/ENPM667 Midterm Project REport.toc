@@ -23,5 +23,5 @@
 \contentsline {subsubsection}{\numberline {8.4.2}Online Implementation}{25}
 \contentsline {section}{\numberline {9}MATLAB Code}{28}
 \contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{28}
-\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{30}
+\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{31}
 \endgroup 
