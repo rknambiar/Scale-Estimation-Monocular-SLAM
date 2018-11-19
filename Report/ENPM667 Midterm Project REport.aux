@@ -54,31 +54,31 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}IMU Reading}{12}}
 \newlabel{For_x}{{10}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Results}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Multiple spline fit}}{15}}
+\newlabel{fig:multipleSpline}{{11}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {a}. Red curve for method with one curve and least square method. \textbf  {b}. Green curve is using the given method by Jung and Taylor.}}{16}}
+\newlabel{fig:errorc1}{{12}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{16}}
+\newlabel{fig:errorc1}{{13}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Extended Kalman Filter}{16}}
+\newlabel{ekf_section}{{7}{16}}
 \citation{ByBo2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces In this case Blue is actual curve traced by IMU this are points with noise.And green is plotted curve. With least square method.}}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Extended Kalman Filter}{15}}
-\newlabel{ekf_section}{{7}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Multiple spline fit}}{16}}
-\newlabel{fig:multipleSpline}{{11}{16}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Kalman filter algorithm}}{16}}
-\newlabel{alg-gd}{{1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Kalman filter state estimation\nobreakspace  {}\cite  {ByBo2015} }}{17}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Kalman filter algorithm}}{17}}
+\newlabel{alg-gd}{{1}{17}}
 \citation{ByBo2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {a}. Red curve for method with one curve and least square method. \textbf  {b}. Green curve is using the given method by Jung and Taylor.}}{17}}
-\newlabel{fig:errorc1}{{12}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Actual 3D path with noise vs Optimized spline fit}}{18}}
-\newlabel{fig:errorc1}{{13}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Kalman filter state estimation\nobreakspace  {}\cite  {ByBo2015} }}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Non-Linear system\nobreakspace  {}\cite  {ByBo2015}}}{18}}
 \citation{davison2007monoslam}
 \citation{klein2007parallel}
 \citation{strasdatavisual}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Non-Linear system\nobreakspace  {}\cite  {ByBo2015}}}{19}}
 \citation{chli2017}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Simultaneous Localization and Mapping}{19}}
+\newlabel{slam}{{8}{19}}
 \citation{cyrillslam}
 \citation{bresson2017simultaneous,cadena2016past,taketomi2017visual}
 \citation{scaramuzza2011visual}
 \citation{cadena2016past}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Simultaneous Localization and Mapping}{20}}
-\newlabel{slam}{{8}{20}}
 \citation{scaramuzza2011visual}
 \citation{scaramuzza2011visual,fraundorfer2012visual}
 \citation{scaramuzza2011visual}
@@ -92,26 +92,24 @@
 \citation{tomasi1991detection}
 \citation{nister2004efficient}
 \citation{longuet1981computer}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Monocular Visual Odometry}}{22}}
 \citation{davison2003real,davison2007monoslam}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Monocular Visual Odometry}}{22}}
 \citation{nister2004efficient}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.2}MonoSLAM}{23}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Parallel Tracking and Mapping (PTAM)}{23}}
 \newlabel{ptamtheory}{{8.3}{23}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces PTAM - Tracking Algorithm}}{23}}
 \citation{nutzi2011fusion}
 \citation{nutzi2011fusion}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces PTAM - Tracking Algorithm}}{24}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces PTAM - Mapping Algorithm}}{24}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Results}{24}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}Simulated and Real Data}{24}}
 \citation{ptamcode}
+\citation{nutzi2011fusion}
+\citation{nutzi2011fusion}
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Offline simulation results with simulated and real data. Fewer directions (X,Y,Z) included in Kalman filter gives us a better estimate of $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{25}}
 \newlabel{fig:ekf1}{{18}{25}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.2}Online Implementation}{25}}
-\citation{nutzi2011fusion}
-\citation{nutzi2011fusion}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{26}}
-\newlabel{fig:ekf2}{{19}{26}}
 \citation{*}
 \bibstyle{plain}
 \bibdata{references}
@@ -128,6 +126,8 @@
 \bibcite{jung2001camera}{11}
 \bibcite{ptamcode}{12}
 \bibcite{klein2007parallel}{13}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Online implementation with PTAM work flow.Blue color boxes are original PTAM threads. Yellow boxes are added threads for scale estimation $\lambda $.\nobreakspace  {}\cite  {nutzi2011fusion}}}{26}}
+\newlabel{fig:ekf2}{{19}{26}}
 \bibcite{longuet1981computer}{14}
 \bibcite{lowe2004distinctive}{15}
 \bibcite{chli2017}{16}
@@ -141,10 +141,10 @@
 \bibcite{tomasi1991detection}{24}
 \bibcite{imgFormBoomgaard}{25}
 \bibcite{zhang}{26}
-\@writefile{toc}{\contentsline {section}{\numberline {9}MATLAB Code}{29}}
-\newlabel{code}{{9}{29}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{29}}
-\@writefile{lol}{\contentsline {lstlisting}{./code/spline2dparts.m}{29}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{31}}
-\@writefile{lol}{\contentsline {lstlisting}{./code/spline3d.m}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}MATLAB Code}{28}}
+\newlabel{code}{{9}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{28}}
+\@writefile{lol}{\contentsline {lstlisting}{./code/spline2dparts.m}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{30}}
+\@writefile{lol}{\contentsline {lstlisting}{./code/spline3d.m}{31}}
 \@writefile{toc}{\endgroup }

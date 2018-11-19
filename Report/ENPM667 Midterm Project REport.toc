@@ -13,15 +13,15 @@
 \contentsline {subsubsection}{\numberline {6.1.3}RMS (Least square method)}{11}
 \contentsline {subsection}{\numberline {6.2}IMU Reading}{12}
 \contentsline {subsection}{\numberline {6.3}Results}{14}
-\contentsline {section}{\numberline {7}Extended Kalman Filter}{15}
-\contentsline {section}{\numberline {8}Simultaneous Localization and Mapping}{20}
+\contentsline {section}{\numberline {7}Extended Kalman Filter}{16}
+\contentsline {section}{\numberline {8}Simultaneous Localization and Mapping}{19}
 \contentsline {subsection}{\numberline {8.1}Visual Odometry}{21}
 \contentsline {subsection}{\numberline {8.2}MonoSLAM}{23}
 \contentsline {subsection}{\numberline {8.3}Parallel Tracking and Mapping (PTAM)}{23}
 \contentsline {subsection}{\numberline {8.4}Results}{24}
 \contentsline {subsubsection}{\numberline {8.4.1}Simulated and Real Data}{24}
 \contentsline {subsubsection}{\numberline {8.4.2}Online Implementation}{25}
-\contentsline {section}{\numberline {9}MATLAB Code}{29}
-\contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{29}
-\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{31}
+\contentsline {section}{\numberline {9}MATLAB Code}{28}
+\contentsline {subsection}{\numberline {9.1}Spline Fit 2D}{28}
+\contentsline {subsection}{\numberline {9.2}Spline Fit 3D}{30}
 \endgroup 
