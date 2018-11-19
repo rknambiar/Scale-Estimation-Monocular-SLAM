@@ -10,11 +10,12 @@
 \contentsline {subsubsection}{\numberline {5.1.3}RMS (Least square method)}{8}
 \contentsline {subsection}{\numberline {5.2}IMU Reading}{9}
 \contentsline {subsection}{\numberline {5.3}Results}{12}
-\contentsline {section}{\numberline {6}Simultaneous Localization and Mapping}{14}
-\contentsline {subsection}{\numberline {6.1}Visual Odometry}{15}
-\contentsline {subsection}{\numberline {6.2}EKFSLAM}{17}
-\contentsline {subsection}{\numberline {6.3}Parallel Tracking and Mapping (PTAM)}{17}
-\contentsline {subsection}{\numberline {6.4}Results}{18}
-\contentsline {subsubsection}{\numberline {6.4.1}Simulated and Real Data}{18}
-\contentsline {subsubsection}{\numberline {6.4.2}Online Implementation}{19}
-\endgroup 
+\contentsline {section}{\numberline {6}Extended Kalman Filter}{14}
+\contentsline {subsection}{\numberline {6.1}Introduction}{14}
+\contentsline {section}{\numberline {7}Simultaneous Localization and Mapping}{16}
+\contentsline {subsection}{\numberline {7.1}Visual Odometry}{17}
+\contentsline {subsection}{\numberline {7.2}EKFSLAM}{19}
+\contentsline {subsection}{\numberline {7.3}Parallel Tracking and Mapping (PTAM)}{19}
+\contentsline {subsection}{\numberline {7.4}Results}{20}
+\contentsline {subsubsection}{\numberline {7.4.1}Simulated and Real Data}{20}
+\contentsline {subsubsection}{\numberline {7.4.2}Online Implementation}{21}

@@ -5,6 +5,26 @@ In this section, we cover SLAM, and the different concepts related to SLAM such 
 
 \textbf{\emph{How can a body navigate in a previously unknown environment while constantly building and updating a map of its workspace using onboard sensors only?} ~\cite{chli2017}}\\
 
+Mathematically, this can be expressed as~\cite{cyrillslam}
+
+Input:\
+\begin{equation}
+Control\ input:\ u_{1:T} = {u_1, u_2, ...., u_T}
+\end{equation}
+
+\begin{equation}
+Observations:\ z_{1:T} = {z_1, z_2, ...., z_T}
+\end{equation}
+
+Output:\
+\begin{equation}
+Map\ of\ Environment\ m
+\end{equation}
+
+\begin{equation}
+Path\ of\ robot:\ x_{0:T} = {x_0, x_1, ...., x_T}
+\end{equation}
+
 From the problem statement above, we notice that the robot has no a priori knowledge of the workspace or environment that it is in. This makes SLAM a very challenging problem in probabilistic robotics. This is also referred to as a chicken-egg problem in that we need to map the environment to get an accurate pose, but at the same time we also need an accurate pose to build a correct map. Therefore, it is an iterative process of estimating pose and building a map simultaneously. Accurate pose estimation is critical for many applications in computer vision, autonomous robotics and augmented reality.
   
 

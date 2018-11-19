@@ -57,6 +57,13 @@ Gabriel N{\"u}tzi, Stephan Weiss, Davide Scaramuzza, and Roland Siegwart.
 \newblock {\em Journal of intelligent \& robotic systems}, 61(1-4):287--299,
   2011.
 
+\bibitem{cyrillslam}
+Cyrill Stachniss.
+\newblock Lecture notes in robot mapping, 2013.
+\newblock URL:
+  \url{http://ais.informatik.uni-freiburg.de/teaching/ws12/mapping/pdf/slam04-ekf-slam.pdf}.
+  Last visited on 11/18/2018.
+
 \bibitem{tomasi1991detection}
 Carlo Tomasi and Takeo Kanade.
 \newblock Detection and tracking of point features.

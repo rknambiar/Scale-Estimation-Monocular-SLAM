@@ -1,7 +1,7 @@
-\section{Extended Kalman Filter:-}
+\section{Extended Kalman Filter}
 \label{Spline_1}
 
-\subsection{Introduction :-}
+\subsection{Introduction}
 In estimation theory, the extended Kalman filter (EKF) is the nonlinear version of the Kalman filter which linearizes about an estimate of the current mean and covariance. In the case of well defined transition models, the EKF has been considered to estimate the state. 
 in this system we have a state and an observer these are given by equation.
 $ X=AX +BU + W_d $  and $ Y=CX + W_n $
@@ -19,13 +19,13 @@ So according in paper we learned that non-linear system is defined as.
 \begin{algorithm}
 \caption{Kalman filter algorithm}\label{alg-gd}
 \begin{algorithmic}[1]
-\State Kalman Filter \({(\mu_{t-1},\Sigma_{t-1},u_t,z_t)}\)
-\State \( {\mu_{t}}=A_t \mu_{t-1} + B_t u_t \)
-\State \( \Sigma_{t}=A_t \Sigma_{t-1} A_t^T +R_t\)
-\State \( K_t = \Sigma_{t} C_t(C_t^T \Sigma_{t}C_t^T+Q_t)^{-1}\)
-\State \( \mu_{t}=\mu_{t}+K_t(z_t-C_t \mu_t) \)
-\State \(\Sigma_{t}=(I-K_t C_t)\Sigma_{t}\)
-\State return \( \mu_t ,  \Sigma_t \)
+\STATE Kalman Filter \({(\mu_{t-1},\Sigma_{t-1},u_t,z_t)}\)
+\STATE \( {\mu_{t}}=A_t \mu_{t-1} + B_t u_t \)
+\STATE \( \Sigma_{t}=A_t \Sigma_{t-1} A_t^T +R_t\)
+\STATE \( K_t = \Sigma_{t} C_t(C_t^T \Sigma_{t}C_t^T+Q_t)^{-1}\)
+\STATE \( \mu_{t}=\mu_{t}+K_t(z_t-C_t \mu_t) \)
+\STATE \(\Sigma_{t}=(I-K_t C_t)\Sigma_{t}\)
+\STATE return \( \mu_t ,  \Sigma_t \)
 \end{algorithmic}
 \end{algorithm}
 
